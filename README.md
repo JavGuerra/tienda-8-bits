@@ -11,13 +11,14 @@ __Otros módulos__: compression, cors, dotenv, nodemon.
 __Modos de uso__:
 * Uso en desarrollo: `npm run dev`  
 * Uso en desarrollo en Windows: `npm run devWin`  
-* Uso en producción: `npm start`  
+* Uso en producción: `npm start`
+* En producción, renombrar `.env.example` a `.env` y completar. 
 
 __Ruta y puerto «dev»__: http://localhost:3000/
 
 __Notas__: 
 * Preparado para su uso con un servidor local de mongodb.
-* En producción, renombrar `.env.example` a `.env` y completar.
+* Preparado para versionado de la API.
 
 ## Front end
 
