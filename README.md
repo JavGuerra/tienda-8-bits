@@ -10,7 +10,7 @@ __Otros módulos__: compression, cors, dotenv, nodemon.
 
 __Modos de uso__:
 * Uso en desarrollo: `npm run dev`  
-* Uso en desarrollo en windows: `npm run devWin`  
+* Uso en desarrollo en Windows: `npm run devWin`  
 * Uso en producción: `npm start`  
 
 __Ruta y puerto «dev»__: http://localhost:3000/
