@@ -8,16 +8,20 @@ Noviembre 2022
 __Tecnologías__: Node + Express + Mongodb + Mongoose  
 __Otros módulos__: compression, cors, dotenv, nodemon.
 
+__Instalación__:
+* Renombrar `.env.example` a `.env` y completar los datos requeridos
+* Crear la BBDD MongoDB `practicafinal` y las colecciones `links` y `categories`  
+* Para la carga inicial de datos, usar: `node createdb.js`
+
 __Modos de uso__:
 * Uso en desarrollo: `npm run dev`  
 * Uso en desarrollo en Windows: `npm run devWin`  
 * Uso en producción: `npm start`
-* En producción, renombrar `.env.example` a `.env` y completar. 
 
 __Ruta y puerto «dev»__: http://localhost:3000/
 
 __Notas__: 
-* Preparado para su uso con un servidor local de mongodb.
+* Preparado para uso de BBDD MongoDB local o remoto (config.js).
 * Preparado para versionado de la API.
 
 ## Front end
