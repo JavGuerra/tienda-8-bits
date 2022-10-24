@@ -1,8 +1,17 @@
 import mongoose from 'mongoose';
 
 const connectDB = async (url) => {
-    const db = await mongoose.connect(url);
-    console.log('Conectado a BBDD MongoDB');
+    try {
+        await mongoose.connect(url);
+        console.log('Conectado a BBDD MongoDB');
+    } catch (error) {
+        handleError(error);
+    }
+
+    const db = mongoose.connection;
+
+    db.on('error', error => { logError(error) });
+
     return db;
 }
 

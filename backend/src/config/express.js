@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
 
+import v1CategoryRoutes from '../v1/routes/categoryRoutes.js';
+import v1LinkRoutes from '../v1/routes/linkRoutes.js';
+
 const expressApp = express();
 
 // Middlewares
@@ -15,7 +18,8 @@ expressApp.use((req, res, next) => {
 
 // Routes
 
-// TODO expressApp.use('/v1', v1Router);
+expressApp.use('/v1/categories', v1CategoryRoutes);
+expressApp.use('/v1/links', v1LinkRoutes);
 
 expressApp.use((req, res) => res.status(404).send('Error 404: No encontrado.'));
 

@@ -21,8 +21,9 @@ __Modos de uso__:
 __Ruta y puerto «dev»__: http://localhost:3000/
 
 __Notas__: 
-* Preparado para uso de BBDD MongoDB local o remoto (config.js).
+* Preparado para el uso de BBDD MongoDB local o en remoto (config.js).
 * Preparado para versionado de la API.
+* Emplea módulos ESM.
 
 ## Front end
 
