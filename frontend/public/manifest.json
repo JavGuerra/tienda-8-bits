@@ -1,0 +1,17 @@
+{
+  "short_name": "Frontend FSWD",
+  "name": "Frontend FSWD · JavGuerra",
+  "description": "Práctica final del Bootcamp Full Stack Web Developer",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
