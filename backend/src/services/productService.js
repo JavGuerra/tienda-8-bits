@@ -1,4 +1,4 @@
-import Product from '../schemas/productSchema.js';
+import Product from '../schemas/ProductSchema.js';
 
 const getFilteredProducts = async (name, relevant, price, brand, page, limit) => {
 

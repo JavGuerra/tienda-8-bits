@@ -1,7 +1,7 @@
-import initEnv from './env.js';
-
 const initVars = async () => {
-    await initEnv();
+    
+    const dotenv = await import('dotenv');
+    dotenv.config();
     
     let url;
     if (process.env.DB_SERVERTYPE === 'local') {

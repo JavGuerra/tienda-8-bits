@@ -1,4 +1,4 @@
-import Manufacturer from '../schemas/manufacturerSchema.js';
+import Manufacturer from '../schemas/ManufacturerSchema.js';
 
 const getAllManufacturers = async () => {
     return await Manufacturer.find({}).exec();
