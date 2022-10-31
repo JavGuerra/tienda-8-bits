@@ -4,32 +4,32 @@
 import initVars  from './src/config/config.js';
 import connectDB from './src/config/db.js';
 
-const Category = require('./src/schemas/Category-schema');
-const Link = require('./src/schemas/Link-schema');
-const categories = require('./data/categories');
-const links = require('./data/links');
+import Product   from './src/schemas/ProductSchema';
+import products  from './data/products';
+import Manufacturer  from './src/schemas/ManufacturerSchema';
+import manufacturers from './data/manufacturers';
 
 const createdb = async () => {
     const { url } = await initVars();
     const db = await connectDB(url);
 
     console.log('Limpiando...');
-    await Category.deleteMany({});
-    await Link.deleteMany({});
+    await Product.deleteMany({});
+    await Manufacturer.deleteMany({});
 
     console.log('Llenando las colecciones...');
-    const newCategories = await Category.insertMany(categories);
+    const newManufacturers = await Manufacturer.insertMany(manufacturers);
 
-    const newLinks = links.map( link => {
-        const category = newCategories.filter(
-            category => category.category === link.category)[0];
-        const { _id } = category;
+    const newProducts = products.map( product => {
+        const manufacturer = newManufacturers.filter(
+            manufacturer => manufacturer.cif === product.manufacturer)[0];
+        const { _id, name } = manufacturer;
         return {
-            ...link,
-            category: { _id }
+            ...product,
+            manufacturer: { ref: _id, name }
         };
     });
-    await Link.insertMany(newLinks);
+    await Product.insertMany(newProducts);
 
     db.disconnect();
     console.log('Conexión finalizada');
