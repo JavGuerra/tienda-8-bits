@@ -6,7 +6,7 @@ Noviembre 2022
 ## Back end
 
 __Tecnologías__: Node + Express + Mongodb + Mongoose  
-__Otros módulos__: compression, cors, dotenv, nodemon.
+__Otros módulos__: compression, cors, dotenv, nodemon, mongoose-paginator-v2.
 
 __Instalación__:
 * Renombrar `.env.example` a `.env` y completar los datos requeridos
