@@ -18,9 +18,9 @@ __Modos de uso__:
 * Uso en desarrollo en Windows: `npm run devWin`  
 * Uso en producción: `npm start`
 
-__Rutas y puerto «dev»__: http://localhost:3000/
-* Manufacturers: http://localhost:3000/manufacturers/
-* Products: http://localhost:3000/products/
+__Rutas y puerto «dev»__: http://localhost:3000/v1/
+* Manufacturers: http://localhost:3000/v1/manufacturers/
+* Products: http://localhost:3000/v1/products/
 
 __Código devueltos__ (response_code):
 0. OK. La consulta se ha realizado satisfactoriamente.
