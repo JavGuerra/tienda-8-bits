@@ -18,6 +18,8 @@ expressApp.use((req, res, next) => {
 
 // Routes
 
+expressApp.use(express.static(__dirname + '/../public'));
+
 expressApp.use('/v1/manufacturers', v1ManufacturerRoutes);
 expressApp.use('/v1/products', v1ProductRoutes);
 
