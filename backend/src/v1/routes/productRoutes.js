@@ -1,7 +1,7 @@
-import express from 'express';
-import v1GetFilteredProducts from '../controllers/productController';
+import { Router } from 'express';
+import v1GetFilteredProducts from '../controllers/productController.js';
 
-const v1ProductRoutes = express.Router();
+const v1ProductRoutes = Router();
 
 v1ProductRoutes.get('/', v1GetFilteredProducts);
 

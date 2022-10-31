@@ -4,10 +4,10 @@
 import initVars  from './src/config/config.js';
 import connectDB from './src/config/db.js';
 
-import Product   from './src/schemas/ProductSchema';
-import products  from './data/products';
-import Manufacturer  from './src/schemas/ManufacturerSchema';
-import manufacturers from './data/manufacturers';
+import Product   from './src/schemas/ProductSchema.js';
+import products  from './data/products.js';
+import Manufacturer  from './src/schemas/ManufacturerSchema.js';
+import manufacturers from './data/manufacturers.js';
 
 const createdb = async () => {
     const { url } = await initVars();
