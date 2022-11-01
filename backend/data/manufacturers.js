@@ -3,7 +3,8 @@ const manufacturers =  [
         name: "",
         cif: "",
         country: "",
-        description: ""
+        description: "",
+        logo: ""
     }
 
 ];

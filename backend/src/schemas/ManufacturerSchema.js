@@ -5,7 +5,8 @@ const manufacturerSchema = new Schema(
         name: String,
         cif: String,
         country: String,
-        description: String
+        description: String,
+        logo: String
     },
     { versionKey: false }
 );
