@@ -86,53 +86,65 @@
                     <thead>
                         <tr>
                             <th>Parámetro</th>
+                            <th>Rango</th>
                             <th>Descripción</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>name</td>
+                            <td>String</td>
                             <td>Nombre del producto.</td>
                         </tr>
                         <tr>
                             <td>relevant</td>
+                            <td>0|3</td>
                             <td>Relevancia del producto en el mercado.</td>
                         </tr>
                         <tr>
                             <td>price</td>
+                            <td>&gt; 0</td>
                             <td>Precio de venta en euros.</td>
                         </tr>
                         <tr>
                             <td>brand</td>
+                            <td>String</td>
                             <td>Marca o nombre del fabricante.</td>
                         </tr>
                         <tr>
                             <td>year</td>
+                            <td>1970..1990</td>
                             <td>Año de fabricación.</td>
                         </tr>
                         <tr>
                             <td>sortname</td>
-                            <td>Ordenación ascendente | descendente por nombre del producto.</td>
+                            <td>0|1</td>
+                            <td>Ordenación ascendente | descendente por nombre del producto. Por defecto 0.</td>
                         </tr>
                         <tr>
                             <td>sortrelevant</td>
-                            <td>Ordenación ascendente | descendente por relevancia del producto en el mercado.</td>
+                            <td>0|1</td>
+                            <td>Ordenación ascendente | descendente por relevancia del producto en el mercado. Por defecto 0.</td>
                         </tr>
                         <tr>
                             <td>sortprice</td>
-                            <td>Ordenación ascendente | descendente por precio de venta.</td>
+                            <td>0|1</td>
+                            <td>Ordenación ascendente | descendente por precio de venta. Por defecto 0.</td>
                         </tr>
                         <tr>
                             <td>sortyear</td>
-                            <td>Ordenación ascendente | descendente por año de fabricación.</td>
+                            <td>0|1</td>
+                            <td>Ordenación ascendente | descendente por año de fabricación. Por defecto 0.</td>
                         </tr>
                         <tr>
                             <td>page</td>
-                            <td>Número de página a obtener. Valor por defecto: 1.</td>
+                            <td>1..n</td>
+                            <td>Número de página a obtener. Por defecto: 1.</td>
                         </tr>
                         <tr>
                             <td>limit</td>
-                            <td>Número de productos por página. Valor por defecto: 10.</td>
+                            <td>1..10</td>
+                            <td>Número de productos por página. Por defecto: 10.</td>
                         </tr>
 
                     </tbody>
