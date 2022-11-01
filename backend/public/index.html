@@ -72,7 +72,7 @@
                 <h4>📎 Listado de productos</h4>
                 <p>Obtiene el listado de todos los productos. Devuelve el resultado paginado.</p>
                 <p><code>http://&lt;HOST&gt;:&lt;PORT&gt;/v1/products/</code></p>
-                <h4>📎 Listado de productos según filtros</h4>
+                <h4>📎 Listado de productos filtrados</h4>
                 <p>Obtiene el listado de los productos según los criterios de filtrado recibidos, y devuelve el resultado paginado.</p>
                 <p><code>http://&lt;HOST&gt;:&lt;PORT&gt;/v1/products/?name=&lt;name&gt;&relevant=&lt;relevant&gt;&price&lt;price&gt;=&brand=&lt;brand&gt;&year=&lt;year&gt;&sortname=&lt;sortname&gt;&sortrelevant=&lt;sortrelevant&gt;&sortprice=&lt;sortprice&gt;&sortyear=&lt;sortyear&gt;&page=&lt;page&gt;&limit=&lt;limit&gt;</code>
                 </p>
@@ -113,23 +113,23 @@
                         </tr>
                         <tr>
                             <th scope="rowgroup">sortname</th>
-                            <td>0|1</td>
-                            <td>Ordenación ascendente | descendente por nombre del producto. Por defecto 0.</td>
+                            <td>1|-1</td>
+                            <td>Ordenación ascendente | descendente por nombre del producto. Por defecto 1.</td>
                         </tr>
                         <tr>
                             <th scope="rowgroup">sortrelevant</th>
-                            <td>0|1</td>
-                            <td>Ordenación ascendente | descendente por relevancia del producto en el mercado. Por defecto 0.</td>
+                            <td>1|-1</td>
+                            <td>Ordenación ascendente | descendente por relevancia del producto en el mercado. Por defecto 1.</td>
                         </tr>
                         <tr>
                             <th scope="rowgroup">sortprice</th>
-                            <td>0|1</td>
-                            <td>Ordenación ascendente | descendente por precio de venta. Por defecto 0.</td>
+                            <td>1|-1</td>
+                            <td>Ordenación ascendente | descendente por precio de venta. Por defecto 1.</td>
                         </tr>
                         <tr>
                             <th scope="rowgroup">sortyear</th>
-                            <td>0|1</td>
-                            <td>Ordenación ascendente | descendente por año de fabricación. Por defecto 0.</td>
+                            <td>1|-1</td>
+                            <td>Ordenación ascendente | descendente por año de fabricación. Por defecto 1.</td>
                         </tr>
                         <tr>
                             <th scope="rowgroup">page</th>
