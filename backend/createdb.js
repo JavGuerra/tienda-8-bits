@@ -1,7 +1,7 @@
 // Usar con: node createdb
 // Nota: La BBDD y las colecciones deben estar creadas previamente
 
-import initVars  from './src/config/config.js';
+import initVars  from './src/config/vars.js';
 import connectDB from './src/config/db.js';
 
 import Product   from './src/schemas/ProductSchema.js';
