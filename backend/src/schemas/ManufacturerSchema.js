@@ -3,7 +3,7 @@ import { model, Schema } from 'mongoose';
 const manufacturerSchema = new Schema(
     {
         name: String,
-        cif: String,
+        code: String,
         country: String,
         description: String,
         logo: String

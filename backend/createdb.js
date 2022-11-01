@@ -22,7 +22,7 @@ const createdb = async () => {
 
     const newProducts = products.map( product => {
         const manufacturer = newManufacturers.filter(
-            manufacturer => manufacturer.cif === product.manufacturer)[0];
+            manufacturer => manufacturer.code === product.manufacturer)[0];
         const { _id, name } = manufacturer;
         return {
             ...product,
