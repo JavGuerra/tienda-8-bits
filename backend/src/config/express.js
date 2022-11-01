@@ -11,6 +11,7 @@ const expressApp = express();
 
 expressApp.use(cors());
 expressApp.use(compression());
+
 expressApp.use((req, res, next) => {
     console.log('Ruta: ' + req.url);
     next();
