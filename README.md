@@ -17,9 +17,9 @@ __Modos de uso__:
 * Uso en desarrollo: `npm run dev`    
 * Uso en producción: `npm start`
 
-__Rutas y puerto «dev»__: http://localhost:3000/v1/
-* Manufacturers: http://localhost:3000/v1/manufacturers/
-* Products: http://localhost:3000/v1/products/
+__Ruta y puerto «dev»__: http://localhost:3000/v1/  
+
+Ver instrucciones de uso de la API en: http://localhost:3000/
 
 __Características destacadas__:
 * Emplea módulos ESM. 
@@ -44,17 +44,15 @@ __Ruta y puerto «dev»__: http://localhost:5173/
 * Wikipedia  
 * Enciclopedia «Mi Computer», editorial Delta, 1984.  
 
-Material usado sin ánimo de lucro bajo criterios didácticos y formativos.
-
 ## Licencias
 
 Sobre el código fuente: [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)  
 Sobre el contenido de la web: [(CC) BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/es/)  
 Sobre las fotos: Son propiedad de sus respectivos autores.  
+Material usado sin ánimo de lucro bajo criterios didácticos y formativos.  
 
 ## Saber más
 
 Artículos informativos relacionados con esta página:  
 
-- [](): Descripción
-
+- [Usando populate con paginate y filtrando los resultados](https://javguerra.github.io/2022-10-29-populate-paginate-fitrado/)  
