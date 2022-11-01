@@ -28,24 +28,15 @@
         h1,
         h2,
         strong,
-        code,
-        pre {
+        code {
             color: #333;
         }
 
-        code,
-        pre {
+        code {
             background: #f5f7f9;
             border-bottom: 1px solid #d8dee9;
-        }
-
-        code {
             padding: 4px 8px;
             vertical-align: text-bottom;
-        }
-
-        pre {
-            border-left: 2px solid #69c;
         }
 
         table {
@@ -73,76 +64,80 @@
             <article>
                 <h3>Rutas</h3>
                 <h4>Listado de fabricantes</h4>
-                <p>Listado de todos los fabricantes.</p>
+                <p>Obtiene el listado de todos los fabricantes.</p>
                 <p><code>http://&lt;HOST&gt;:&lt;PORT&gt;/v1/manufacturers/</code></p>
+                <h4>Datos de un fabricante</h4>
+                <p>Obtiene los datos de un único fabricante según su marca.</p>
+                <p><code>http://&lt;HOST&gt;:&lt;PORT&gt;/v1/manufacturers/&lt;BRAND&gt;</code></p>
                 <h4>Listado de productos</h4>
-                <p>Listado de todos los productos. Devuelve el resultado paginado.</p>
+                <p>Obtiene el listado de todos los productos. Devuelve el resultado paginado.</p>
                 <p><code>http://&lt;HOST&gt;:&lt;PORT&gt;/v1/products/</code></p>
-                <h4>Parámetros de la lista de productos</h4>
-                <p>Lista los productos según los criterios de filtrado recibidos y devuelve el resultado paginado.</p>
+                <h4>Listado de productos según filtros</h4>
+                <p>Obtiene el listado de los productos según los criterios de filtrado recibidos, y devuelve el resultado paginado.</p>
                 <p><code>http://&lt;HOST&gt;:&lt;PORT&gt;/v1/products/?name=&lt;name&gt;&relevant=&lt;relevant&gt;&price&lt;price&gt;=&brand=&lt;brand&gt;&year=&lt;year&gt;&sortname=&lt;sortname&gt;&sortrelevant=&lt;sortrelevant&gt;&sortprice=&lt;sortprice&gt;&sortyear=&lt;sortyear&gt;&page=&lt;page&gt;&limit=&lt;limit&gt;</code>
                 </p>
                 <table>
+                    <caption>Parámetros de la lista de productos</caption>
                     <thead>
                         <tr>
-                            <th>Parámetro</th>
-                            <th>Rango</th>
-                            <th>Descripción</th>
+                            <th scope="colgroup">Parámetro</th>
+                            <th scope="colgroup">Rango</th>
+                            <th scope="colgroup">Descripción</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>name</td>
+                            <th scope="rowgroup">name</th>
                             <td>String</td>
                             <td>Nombre del producto.</td>
                         </tr>
                         <tr>
-                            <td>relevant</td>
+                            <th scope="rowgroup">relevant</th>
                             <td>0|3</td>
                             <td>Relevancia del producto en el mercado.</td>
                         </tr>
                         <tr>
-                            <td>price</td>
+                            <th scope="rowgroup">price</th>
                             <td>&gt; 0</td>
                             <td>Precio de venta en euros.</td>
                         </tr>
                         <tr>
-                            <td>brand</td>
+                            <th scope="rowgroup">brand</th>
                             <td>String</td>
                             <td>Marca o nombre del fabricante.</td>
                         </tr>
                         <tr>
-                            <td>year</td>
+                            <th scope="rowgroup">year</th>
                             <td>1970..1990</td>
                             <td>Año de fabricación.</td>
                         </tr>
                         <tr>
-                            <td>sortname</td>
+                            <th scope="rowgroup">sortname</th>
                             <td>0|1</td>
                             <td>Ordenación ascendente | descendente por nombre del producto. Por defecto 0.</td>
                         </tr>
                         <tr>
-                            <td>sortrelevant</td>
+                            <th scope="rowgroup">sortrelevant</th>
                             <td>0|1</td>
                             <td>Ordenación ascendente | descendente por relevancia del producto en el mercado. Por defecto 0.</td>
                         </tr>
                         <tr>
-                            <td>sortprice</td>
+                            <th scope="rowgroup">sortprice</th>
                             <td>0|1</td>
                             <td>Ordenación ascendente | descendente por precio de venta. Por defecto 0.</td>
                         </tr>
                         <tr>
-                            <td>sortyear</td>
+                            <th scope="rowgroup">sortyear</th>
                             <td>0|1</td>
                             <td>Ordenación ascendente | descendente por año de fabricación. Por defecto 0.</td>
                         </tr>
                         <tr>
-                            <td>page</td>
+                            <th scope="rowgroup">page</th>
                             <td>1..n</td>
                             <td>Número de página a obtener. Por defecto: 1.</td>
                         </tr>
                         <tr>
-                            <td>limit</td>
+                            <th scope="rowgroup">limit</th>
                             <td>1..10</td>
                             <td>Número de productos por página. Por defecto: 10.</td>
                         </tr>
