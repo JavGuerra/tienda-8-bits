@@ -1,4 +1,4 @@
-import { getAllManufacturers, getManufacturer }
+import { getAllManufacturers, getManufacturerByBrand }
     from '../../services/manufacturerService.js';
 
 const v1GetAllManufacturers = async (req, res) => {
@@ -7,11 +7,11 @@ const v1GetAllManufacturers = async (req, res) => {
     res.json({response_code, result});
 };
 
-const v1GetManufacturer = async (req, res) => {
+const v1GetManufacturerByBrand = async (req, res) => {
     const brand = req.params.brand.trim().toUpperCase();
-    const result = await getManufacturer(brand);
+    const result = await getManufacturerByBrand(brand);
     const response_code = (result !== null) ? 0 : 1;
     res.json({response_code, result});
 };
 
-export { v1GetAllManufacturers, v1GetManufacturer };
+export { v1GetAllManufacturers, v1GetManufacturerByBrand };
