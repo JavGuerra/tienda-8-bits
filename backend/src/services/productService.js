@@ -10,15 +10,16 @@ const getFilteredProducts = async (name, relevant, price, brand, year,
     if (brand) filter["manufacturer.name"] = { $regex: `.*${brand}.*` };
     if (relevant) filter.relevance = { $regex: `.*${relevant}.*` };
 
-    const sort = {};
+    const sort = {}; // TODO
 
     const populate = { path: "manufacturer.ref", select: "-_id" };
 
     const products = await Product.paginate(filter, {sort, populate, page, limit});
 
-    const local = process.env.HOST + ':' + process.env.PORT + '/';
-
-    // TODO generar rutas dinámicas alterando products.
+    if (result.docs.length) {
+        const local = process.env.HOST + ':' + process.env.PORT + '/';
+        //TODO bucle result.photo = local + 'photo/' + result.logo;
+    }
 
     return products;
 };
