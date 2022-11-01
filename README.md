@@ -14,22 +14,19 @@ __Instalación__:
 * Para la carga inicial de datos, usar: `node createdb.js`
 
 __Modos de uso__:
-* Uso en desarrollo: `npm run dev`  
-* Uso en desarrollo en Windows: `npm run devWin`  
+* Uso en desarrollo: `npm run dev`    
 * Uso en producción: `npm start`
 
 __Rutas y puerto «dev»__: http://localhost:3000/v1/
 * Manufacturers: http://localhost:3000/v1/manufacturers/
 * Products: http://localhost:3000/v1/products/
 
-__Código devueltos__ (response_code):
-0. OK. La consulta se ha realizado satisfactoriamente.
-1. No ha habido coincidencias en la consulta. Resultado vacío.
-
-__Notas__: 
-* Preparado para el uso de BBDD MongoDB local o en remoto (config.js).
-* Preparado para versionado de la API.
-* Emplea módulos ESM.
+__Características destacadas__:
+* Emplea módulos ESM. 
+* Está preparada para el versionado de la API.  
+* Está preparada para el uso de BBDD MongoDB local o en remoto (config.js).
+* Devuelve las rutas de los enlaces a las fotos dinámicamente.  
+* Cuenta con documentación de la API.  
 
 ## Front end
 
@@ -41,4 +38,23 @@ __Modos de uso__:
 * Para su uso en producción, construir con: `npm run build`  
 
 __Ruta y puerto «dev»__: http://localhost:5173/
+
+## Fuentes
+
+* Wikipedia  
+* Enciclopedia «Mi Computer», editorial Delta, 1984.  
+
+Material usado sin ánimo de lucro bajo criterios didácticos y formativos.
+
+## Licencias
+
+Sobre el código fuente: [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)  
+Sobre el contenido de la web: [(CC) BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/es/)  
+Sobre las fotos: Son propiedad de sus respectivos autores.  
+
+## Saber más
+
+Artículos informativos relacionados con esta página:  
+
+- [](): Descripción
 

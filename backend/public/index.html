@@ -5,13 +5,67 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Backend FSWD · JavGuerra</title>
-    <style>body{margin: 0 auto; max-width: 50em; line-height: 1.5; padding: 1em; font-family: Arial, Helvetica, sans-serif; color: #566b78;} h1, h2, strong{color: #333;} code, pre{background: #f5f7f9; border-bottom: 1px solid #d8dee9; color: #a7adba;} code{padding: 2px 4px; vertical-align: text-bottom;} pre{border-left: 2px solid #69c;}</style>
+    <title>API: «Tienda 8bits» V.1</title>
+    <style>
+        body {
+            margin: 0 auto;
+            max-width: 50em;
+            line-height: 1.5;
+            padding: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #566b78;
+        }
+
+        @media (min-width: 512px) {
+            body {
+                background-image: url('favicon.png');
+                background-repeat: no-repeat;
+                background-position: top 30px right 30px;
+                background-size: 64px;
+            }
+        }
+
+        h1,
+        h2,
+        strong,
+        code,
+        pre {
+            color: #333;
+        }
+
+        code,
+        pre {
+            background: #f5f7f9;
+            border-bottom: 1px solid #d8dee9;
+        }
+
+        code {
+            padding: 4px 8px;
+            vertical-align: text-bottom;
+        }
+
+        pre {
+            border-left: 2px solid #69c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        tr,
+        th,
+        td {
+            padding: 6px 6px;
+            border: 1px solid #566b78;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1>API <small>V.1</small></h1>
+        <h1>API: «Tienda 8bits» <small>V.1</small></h1>
         <h2>Modo de uso</h2>
     </header>
     <main>
@@ -20,20 +74,79 @@
                 <h3>Rutas</h3>
                 <h4>Listado de fabricantes</h4>
                 <p>Listado de todos los fabricantes.</p>
-                <p><code>http://localhost:3000/v1/manufacturers/</code></p>
+                <p><code>http://&lt;HOST&gt;:&lt;PORT&gt;/v1/manufacturers/</code></p>
                 <h4>Listado de productos</h4>
-                <p>Lista los productos según los criterios de filtrado recibidos y devuelve el resultado paginado de 10
-                    en 10.</p>
-                <p><code>http://localhost:3000/v1/products/</code></p>
+                <p>Listado de todos los productos. Devuelve el resultado paginado.</p>
+                <p><code>http://&lt;HOST&gt;:&lt;PORT&gt;/v1/products/</code></p>
+                <h4>Parámetros de la lista de productos</h4>
+                <p>Lista los productos según los criterios de filtrado recibidos y devuelve el resultado paginado.</p>
+                <p><code>http://&lt;HOST&gt;:&lt;PORT&gt;/v1/products/?name=&lt;name&gt;&relevant=&lt;relevant&gt;&price&lt;price&gt;=&brand=&lt;brand&gt;&year=&lt;year&gt;&sortname=&lt;sortname&gt;&sortrelevant=&lt;sortrelevant&gt;&sortprice=&lt;sortprice&gt;&sortyear=&lt;sortyear&gt;&page=&lt;page&gt;&limit=&lt;limit&gt;</code>
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>name</td>
+                            <td>Nombre del producto.</td>
+                        </tr>
+                        <tr>
+                            <td>relevant</td>
+                            <td>Relevancia del producto en el mercado.</td>
+                        </tr>
+                        <tr>
+                            <td>price</td>
+                            <td>Precio de venta en euros.</td>
+                        </tr>
+                        <tr>
+                            <td>brand</td>
+                            <td>Marca o nombre del fabricante.</td>
+                        </tr>
+                        <tr>
+                            <td>year</td>
+                            <td>Año de fabricación.</td>
+                        </tr>
+                        <tr>
+                            <td>sortname</td>
+                            <td>Ordenación ascendente | descendente por nombre del producto.</td>
+                        </tr>
+                        <tr>
+                            <td>sortrelevant</td>
+                            <td>Ordenación ascendente | descendente por relevancia del producto en el mercado.</td>
+                        </tr>
+                        <tr>
+                            <td>sortprice</td>
+                            <td>Ordenación ascendente | descendente por precio de venta.</td>
+                        </tr>
+                        <tr>
+                            <td>sortyear</td>
+                            <td>Ordenación ascendente | descendente por año de fabricación.</td>
+                        </tr>
+                        <tr>
+                            <td>page</td>
+                            <td>Número de página a obtener. Valor por defecto: 1.</td>
+                        </tr>
+                        <tr>
+                            <td>limit</td>
+                            <td>Número de productos por página. Valor por defecto: 10.</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <p><small>Nota: &lt;HOST&gt; y &lt;PORT&gt; hacen referencia al servidor y el puerto donde se ubica esta
+                        página.</small></p>
             </article>
             <article>
                 <h3>Códigos devueltos (response_code)</h3>
                 <ul>
-                    <li><strong>0</strong>. OK. La consulta se ha realizado satisfactoriamente.</li>
-                    <li><strong>1</strong>. No ha habido coincidencias en la consulta. Resultado vacío.</li>
+                    <li>[ <strong>0</strong> ]: OK. La consulta se ha realizado satisfactoriamente.</li>
+                    <li>[ <strong>1</strong> ]: No ha habido coincidencias en la consulta. Resultado vacío.</li>
                 </ul>
             </article>
-    
         </section>
     </main>
     <footer><small>Por: Javier Guerra</small></footer>
