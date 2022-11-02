@@ -4,7 +4,7 @@ const products =  [
         code: "001",
         manufacturer: "001",
         description: "Icónico ordenador conocido como «el gomas».",
-        relevance: "2",
+        relevance: 1,
         price: 300,
         year: 1982,
         photo: "spectrum.jpg"

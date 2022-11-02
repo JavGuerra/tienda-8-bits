@@ -10,7 +10,7 @@ const productSchema = new Schema(
             name: String
         },
         description: String,
-        relevance: String,
+        relevance: Number,
         price: Number,
         year: Number,
         photo: String
