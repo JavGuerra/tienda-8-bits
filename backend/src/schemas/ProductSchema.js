@@ -3,17 +3,17 @@ import  mongoosePaginate from 'mongoose-paginate-v2';
 
 const productSchema = new Schema(
     {
-        name: String,
-        code: String,
+        name: { type: String, uppercase: true, trim: true },
+        code: { type: String, index: { unique: true }, trim: true },
         manufacturer: { 
-            ref: { type: Schema.Types.ObjectId, ref: 'Manufacturer'},
+            ref: { type: Schema.Types.ObjectId, ref: 'Manufacturer' },
             name: String
         },
-        description: String,
-        relevance: Number,
-        price: Number,
-        year: Number,
-        photo: String
+        description: { type: String, trim: true },
+        relevance: Boolean,
+        price: { type: Number, min: 1 },
+        year:  { type: Number, min: 1970, max: 1990 },
+        photo: { type: String, lowercase: true, trim: true }
     },
     { versionKey: false }
 );
