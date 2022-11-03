@@ -31,6 +31,6 @@ const v1GetFilteredProducts = async (req, res) => {
     const response_code = result.docs.length ? 0 : 1;
     if (response_code === 0) result = insertRoutes(result);
     res.json({ response_code, result });
-};
+}
 
 export default v1GetFilteredProducts;

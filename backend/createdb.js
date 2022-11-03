@@ -1,6 +1,7 @@
 // Script para llenar y relacionar las colecciones
 // Usar con: node createdb
 // Nota: La BBDD y las colecciones deben estar creadas previamente
+
 import initVars  from './src/config/vars.js';
 import connectDB from './src/config/db.js';
 import Product   from './src/schemas/ProductSchema.js';
@@ -8,7 +9,7 @@ import products  from './data/products.js';
 import Manufacturer  from './src/schemas/ManufacturerSchema.js';
 import manufacturers from './data/manufacturers.js';
 
-(async () => {
+( async () => {
     const { url } = await initVars();
     const db = await connectDB(url);
 
@@ -28,4 +29,4 @@ import manufacturers from './data/manufacturers.js';
     await Product.insertMany(newProducts);
 
     db.close(() => console.log("Conexión finalizada"));
-})();
+} )();

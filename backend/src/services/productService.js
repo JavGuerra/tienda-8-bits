@@ -15,6 +15,6 @@ const getFilteredProducts = async (name, relevant, price, brand, year,
     const populate = { path: "manufacturer.ref", select: "-_id" };
 
     return await Product.paginate(filter, { sort, populate, page, limit });
-};
+}
 
 export default getFilteredProducts;
