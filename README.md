@@ -10,7 +10,7 @@ __Otros módulos__: compression, cors, dotenv, nodemon, mongoose-paginator-v2.
 
 __Instalación__:
 * Renombrar `.env.example` a `.env` y completar los datos requeridos
-* Crear la BBDD MongoDB `practicafinal` y las colecciones `links` y `categories`  
+* Crear la BBDD MongoDB `practicafinal` y las colecciones `products` y `manufacturers`  
 * Para la carga inicial de datos, usar: `node createdb.js`
 
 __Modos de uso__:
@@ -25,7 +25,7 @@ __Características destacadas__:
 * Emplea módulos ESM. 
 * Está preparada para el versionado de la API.  
 * Está preparada para el uso de BBDD MongoDB local o en remoto (config.js).
-* Devuelve las rutas de los enlaces a las fotos dinámicamente.  
+* Devuelve las rutas de los enlaces a las fotos y logos dinámicamente.  
 * Cuenta con documentación de la API.  
 
 ## Front end
