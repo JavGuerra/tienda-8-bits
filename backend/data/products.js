@@ -18,6 +18,16 @@ const products = [
         price: 100,
         year: 1981,
         photo: "zx81.jpg"
+    },
+    {
+        name: "SORD M5",
+        code: "003",
+        manufacturer: "002",
+        description: "4K. Ampliable a 36K. Bien construido. BASIC limitado.",
+        relevance: false,
+        price: 150,
+        year: 1982,
+        photo: "sordm5.jpg"
     }
 ];
 
