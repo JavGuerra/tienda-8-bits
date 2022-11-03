@@ -1,7 +1,7 @@
 import Product from '../schemas/ProductSchema.js';
 
-const getFilteredProducts = async (name, relevant, price, brand, year,
-    sortName, sortRelevant, sortPrice, sortYear, page, limit) => {
+const getFilteredProducts = async (
+    name, relevant, price, brand, year, sort, page, limit ) => {
 
     const filter = {};
     if (name ) filter.name  = { $regex: `.*${ name }.*` };
@@ -9,8 +9,6 @@ const getFilteredProducts = async (name, relevant, price, brand, year,
     if (relevant) filter.relevance = { $eq: relevant };
     if (price) filter.price = { $lte: price };
     if (year ) filter.year  = { $eq:  year  };
-
-    const sort = { name: sortName, relevance: sortRelevant, price: sortPrice, year: sortYear };
 
     const populate = { path: "manufacturer.ref", select: "-_id" };
 

@@ -23,10 +23,12 @@ const v1GetFilteredProducts = async (req, res) => {
     if (isNaN(sortname ) || sortname  !== 1 || sortname  !== -1) sortname  = 1;
     if (isNaN(sortprice) || sortprice !== 1 || sortprice !== -1) sortprice = 1;
     if (isNaN(sortyear ) || sortyear  !== 1 || sortyear  !== -1) sortyear  = 1;
-    if (isNaN(sortrelevant) || sortrelevant !== 1 || sortrelevant !== -1) sortrelevant = 0;
+    if (isNaN(sortrelevant) || sortrelevant !== 1 || sortrelevant !== -1) sortrelevant = 1;
 
-    let result = await getFilteredProducts(name, relevant, price, brand, year,
-        sortname, sortrelevant, sortprice, sortyear, page, limit);
+    const sort = { name: sortname, relevance: sortrelevant, price: sortprice, year: sortyear };
+
+    let result = await getFilteredProducts(
+        name, relevant, price, brand, year, sort, page, limit );
 
     const response_code = result.docs.length ? 0 : 1;
     if (response_code === 0) result = insertRoutes(result);
