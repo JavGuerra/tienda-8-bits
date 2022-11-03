@@ -1,10 +1,11 @@
 import getFilteredProducts from "../../services/productService.js";
 
 const insertRoutes = data => {
-    const local = process.env.HOST + ':' + process.env.PORT + '/';
-    // TODO para cada documento del resultado:
-    // result.photo = local + 'photo/' + result.logo;
-    // result.ref.logo = local + 'logo/' + result.ref.logo;
+    const url = process.env.HOST + ':' + process.env.PORT + '/';
+    data.docs.forEach(element => {
+        element.photo = url + 'photo/' + element.photo;
+        element.manufacturer.ref.logo = url + 'logo/' + element.manufacturer.ref.logo;
+    });
     return data;
 }
 

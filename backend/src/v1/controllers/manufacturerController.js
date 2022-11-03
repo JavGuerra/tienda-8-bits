@@ -2,8 +2,8 @@ import { getAllManufacturers, getManufacturerByBrand }
     from '../../services/manufacturerService.js';
 
 const insertRoutes = data => {
-    const local = process.env.HOST + ':' + process.env.PORT + '/';
-    // TODO data[0].logo = local + 'logo/' + data[0].logo;
+    const url = process.env.HOST + ':' + process.env.PORT + '/';
+    data.forEach( element => element.logo = url + 'logo/' + element.logo );
     return data;
 }
 
@@ -18,7 +18,7 @@ const v1GetManufacturerByBrand = async (req, res) => {
     const brand = req.params.brand.trim().toUpperCase();
     let result = await getManufacturerByBrand(brand);
     const response_code = (result !== null) ? 0 : 1;
-    if (response_code === 0) result = insertRoutes(result);
+    if (response_code === 0) result = insertRoutes([result]);
     res.json({response_code, result});
 };
 
