@@ -1,5 +1,7 @@
 import getFilteredProducts from "../../services/productService.js";
 
+const stringToBoolean = data => data === "true";
+
 const insertRoutes = data => {
     const url = process.env.HOST + ':' + process.env.PORT + '/';
     data.docs.forEach(element => {
@@ -13,9 +15,9 @@ const v1GetFilteredProducts = async (req, res) => {
     let { name, relevant, price, brand, year, sortname = 1, sortrelevant = 1,
         sortprice = 1, sortyear = 1, page = 1, limit = 10, } = req.query;
 
+    if (relevant) relevant = stringToBoolean(relevant.trim().toLowerCase());
     if (name ) name  = name.trim().toUpperCase();
     if (brand) brand = brand.trim().toUpperCase();
-    if (relevant !== true || relevant !== false) relevant = false;
     if (isNaN(price) || price <= 0) price = null;
     if (isNaN(page ) || page  < 1 ) page = 1;
     if (isNaN(limit) || limit < 1 || limit > 10) limit = 10;
@@ -25,7 +27,8 @@ const v1GetFilteredProducts = async (req, res) => {
     if (isNaN(sortyear ) || sortyear  !== 1 || sortyear  !== -1) sortyear  = 1;
     if (isNaN(sortrelevant) || sortrelevant !== 1 || sortrelevant !== -1) sortrelevant = 1;
 
-    const sort = { name: sortname, relevance: sortrelevant, price: sortprice, year: sortyear };
+    const sort = {
+        name: sortname, relevance: sortrelevant, price: sortprice, year: sortyear };
 
     let result = await getFilteredProducts(
         name, relevant, price, brand, year, sort, page, limit );
