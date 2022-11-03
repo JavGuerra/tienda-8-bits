@@ -7,7 +7,7 @@ const productSchema = new Schema(
         code: { type: String, index: { unique: true }, trim: true },
         manufacturer: { 
             ref: { type: Schema.Types.ObjectId, ref: 'Manufacturer' },
-            name: String
+            brand: String
         },
         description: { type: String, trim: true },
         relevance: Boolean,

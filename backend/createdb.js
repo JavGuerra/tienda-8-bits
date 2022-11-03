@@ -23,8 +23,8 @@ import manufacturers from './data/manufacturers.js';
     const newProducts = products.map(product => {
         const manufacturer = newManufacturers.filter(
             manufacturer => manufacturer.code === product.manufacturer)[0];
-        const { _id, name } = manufacturer;
-        return { ...product, manufacturer: { ref: _id, name } }
+        const { _id, brand } = manufacturer;
+        return { ...product, manufacturer: { ref: _id, brand } }
     });
     await Product.insertMany(newProducts);
 

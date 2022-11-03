@@ -6,7 +6,8 @@ const insertRoutes = data => {
     const url = process.env.HOST + ':' + process.env.PORT + '/';
     data.docs.forEach(element => {
         element.photo = url + 'photo/' + element.photo;
-        element.manufacturer.ref.logo = url + 'logo/' + element.manufacturer.ref.logo;
+        if (!element.manufacturer.ref.logo.includes(url)) 
+            element.manufacturer.ref.logo = url + 'logo/' + element.manufacturer.ref.logo;
     });
     return data;
 }
