@@ -13,11 +13,11 @@ const insertRoutes = data => {
 }
 
 const v1GetFilteredProducts = async (req, res) => {
-    let { name, relevant, price, brand, year, sortname = 1, sortrelevant = 1,
+    let { model, relevant, price, brand, year, sortname = 1, sortrelevant = 1,
         sortprice = 1, sortyear = 1, page = 1, limit = 10, } = req.query;
 
     if (relevant) relevant = stringToBoolean(relevant.trim().toLowerCase());
-    if (name ) name  = name.trim().toUpperCase();
+    if (model) model = model.trim().toUpperCase();
     if (brand) brand = brand.trim().toUpperCase();
     if (isNaN(price) || price <= 0) price = null;
     if (isNaN(page ) || page  < 1 ) page = 1;
@@ -32,7 +32,7 @@ const v1GetFilteredProducts = async (req, res) => {
         name: sortname, relevance: sortrelevant, price: sortprice, year: sortyear };
 
     let result = await getFilteredProducts(
-        name, relevant, price, brand, year, sort, page, limit );
+        model, relevant, price, brand, year, sort, page, limit );
 
     const response_code = result.docs.length ? 0 : 1;
     if (response_code === 0) result = insertRoutes(result);

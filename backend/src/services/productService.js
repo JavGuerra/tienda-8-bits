@@ -1,10 +1,10 @@
 import Product from '../schemas/ProductSchema.js';
 
 const getFilteredProducts = async (
-    name, relevant, price, brand, year, sort, page, limit ) => {
+    model, relevant, price, brand, year, sort, page, limit ) => {
 
     const filter = {};
-    if (name ) filter.name  = { $regex: `.*${ name }.*` };
+    if (model) filter.model = { $regex: `.*${ model }.*` };
     if (brand) filter["manufacturer.brand"] = { $regex: `.*${ brand }.*` };
     if (relevant !== undefined) filter.relevance = { $eq: relevant };
     if (price) filter.price = { $lte: price };
