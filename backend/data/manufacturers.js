@@ -1,4 +1,4 @@
-const manufacturers =  [
+const manufacturers = [
     {
         name: "Sinclair",
         code: "001",

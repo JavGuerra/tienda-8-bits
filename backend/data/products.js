@@ -1,4 +1,4 @@
-const products =  [
+const products = [
     {
         name: "ZX Spectrum",
         code: "001",
