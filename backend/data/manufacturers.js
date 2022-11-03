@@ -6,7 +6,6 @@ const manufacturers =  [
         description: "La compañía de Sir Clive Sinclair.",
         logo: "sinclair.png"
     }
-
 ];
 
 export default manufacturers;
