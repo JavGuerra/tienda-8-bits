@@ -13,7 +13,7 @@ const insertRoutes = data => {
 }
 
 const v1GetFilteredProducts = async (req, res) => {
-    let { model, relevant, price, brand, year, sortname = 1, sortrelevant = 1,
+    let { model, relevant, price, brand, year, sortmodel = 1, sortrelevant = 1,
         sortprice = 1, sortyear = 1, page = 1, limit = 10, } = req.query;
 
     if (relevant) relevant = stringToBoolean(relevant.trim().toLowerCase());
@@ -29,7 +29,7 @@ const v1GetFilteredProducts = async (req, res) => {
     if (isNaN(sortrelevant) || sortrelevant !== 1 || sortrelevant !== -1) sortrelevant = 1;
 
     const sort = {
-        name: sortname, relevance: sortrelevant, price: sortprice, year: sortyear };
+        model: sortmodel, relevance: sortrelevant, price: sortprice, year: sortyear };
 
     let result = await getFilteredProducts(
         model, relevant, price, brand, year, sort, page, limit );

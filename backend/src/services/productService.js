@@ -5,9 +5,9 @@ const getFilteredProducts = async (
 
     const filter = {};
     if (model) filter.model = { $regex: `.*${ model }.*` };
-    if (brand) filter["manufacturer.brand"] = { $regex: `.*${ brand }.*` };
     if (relevant !== undefined) filter.relevance = { $eq: relevant };
     if (price) filter.price = { $lte: price };
+    if (brand) filter["manufacturer.brand"] = { $regex: `.*${ brand }.*` };
     if (year ) filter.year  = { $eq:  year  };
 
     const populate = { path: "manufacturer.ref", select: "-_id" };
