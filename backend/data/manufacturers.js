@@ -2,7 +2,7 @@ const manufacturers = [
     {
         brand: "Sinclair Research Ltd.",
         code: "001",
-        country: "UK",
+        country: "Reino Unido",
         description: "La compañía de Sir Clive Sinclair.",
         logo: "sinclair.png",
         link: "https://es.wikipedia.org/wiki/Sinclair_Research"
