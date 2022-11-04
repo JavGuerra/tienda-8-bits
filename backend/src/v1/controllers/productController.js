@@ -35,8 +35,7 @@ const v1GetFilteredProducts = async (req, res) => {
     if (brand) filter["manufacturer.brand"] = { $regex: `.*${ brand }.*` };
     if (year ) filter.year  = { $eq:  year  };
 
-    const sort = {
-        model: sortmodel, relevance: sortrelevant, price: sortprice, year: sortyear };
+    const sort = { model: sortmodel, relevance: sortrelevant, price: sortprice, year: sortyear };
     
     const populate = { path: "manufacturer.ref", select: "-_id" };
 
