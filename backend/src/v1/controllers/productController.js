@@ -28,12 +28,21 @@ const v1GetFilteredProducts = async (req, res) => {
     if (isNaN(sortyear ) || sortyear  !== 1 || sortyear  !== -1) sortyear  = 1;
     if (isNaN(sortrelevant) || sortrelevant !== 1 || sortrelevant !== -1) sortrelevant = 1;
 
+    const filter = {};
+    if (model) filter.model = { $regex: `.*${ model }.*` };
+    if (relevant !== undefined) filter.relevance = { $eq: relevant };
+    if (price) filter.price = { $lte: price };
+    if (brand) filter["manufacturer.brand"] = { $regex: `.*${ brand }.*` };
+    if (year ) filter.year  = { $eq:  year  };
+
     const sort = {
         model: sortmodel, relevance: sortrelevant, price: sortprice, year: sortyear };
+    
+    const populate = { path: "manufacturer.ref", select: "-_id" };
 
-    let result = await getFilteredProducts(
-        model, relevant, price, brand, year, sort, page, limit );
+    const options = { sort, populate, page, limit };
 
+    let result = await getFilteredProducts( filter, options );
     const response_code = result.docs.length ? 0 : 1;
     if (response_code === 0) result = insertRoutes(result);
     res.json({ response_code, result });

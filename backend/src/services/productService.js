@@ -1,18 +1,7 @@
 import Product from '../schemas/ProductSchema.js';
 
-const getFilteredProducts = async (
-    model, relevant, price, brand, year, sort, page, limit ) => {
-
-    const filter = {};
-    if (model) filter.model = { $regex: `.*${ model }.*` };
-    if (relevant !== undefined) filter.relevance = { $eq: relevant };
-    if (price) filter.price = { $lte: price };
-    if (brand) filter["manufacturer.brand"] = { $regex: `.*${ brand }.*` };
-    if (year ) filter.year  = { $eq:  year  };
-
-    const populate = { path: "manufacturer.ref", select: "-_id" };
-
-    return await Product.paginate(filter, { sort, populate, page, limit });
+const getFilteredProducts = async ( filter, options ) => {
+    return await Product.paginate(filter, options);
 }
 
 export default getFilteredProducts;
