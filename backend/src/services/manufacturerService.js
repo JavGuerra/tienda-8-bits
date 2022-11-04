@@ -4,8 +4,7 @@ const getAllManufacturers = async () => {
     return await Manufacturer.find().exec();
 }
 
-const getManufacturerByBrand = async (brand) => {
-    const filter = { brand: { $regex: `.*${brand}.*` } };
+const getManufacturerByBrand = async (filter) => {
     return await Manufacturer.findOne(filter).exec();
 }
 

@@ -1,6 +1,6 @@
 import Product from '../schemas/ProductSchema.js';
 
-const getFilteredProducts = async ( filter, options ) => {
+const getFilteredProducts = async (filter, options)  => {
     return await Product.paginate(filter, options);
 }
 
