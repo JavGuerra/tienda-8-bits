@@ -6,7 +6,8 @@ const manufacturerSchema = new Schema(
         code:  { type: String, index: { unique: true }, trim: true},
         country: { type: String, trim: true },
         description: { type: String, trim: true },
-        logo:  { type: String, lowercase: true, trim: true }
+        logo:  { type: String, lowercase: true, trim: true },
+        link:  { type: String, trim: true }
     },
     { versionKey: false }
 );
