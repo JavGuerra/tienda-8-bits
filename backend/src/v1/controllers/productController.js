@@ -23,10 +23,10 @@ const v1GetFilteredProducts = async (req, res) => {
     if (isNaN(page ) || page  < 1 ) page = 1;
     if (isNaN(limit) || limit < 1 || limit > 10) limit = 10;
     if (isNaN(year ) || year  < 1970 || year > 1990) year = null;
-    if (isNaN(sortmodel) || sortmodel !== 1 || sortmodel !== -1) sortmodel = 1;
-    if (isNaN(sortprice) || sortprice !== 1 || sortprice !== -1) sortprice = 1;
-    if (isNaN(sortyear ) || sortyear  !== 1 || sortyear  !== -1) sortyear  = 1;
-    if (isNaN(sortrelevant) || sortrelevant !== 1 || sortrelevant !== -1) sortrelevant = 1;
+    if (sortmodel !== '-1') sortmodel = 1;
+    if (sortprice !== '-1') sortprice = 1;
+    if (sortyear  !== '-1') sortyear  = 1;
+    if (sortrelevant !== '-1') sortrelevant = 1;
 
     const filter = {};
     if (model) filter.model = { $regex: `.*${ model }.*` };
