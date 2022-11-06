@@ -56,3 +56,4 @@ Material usado sin ánimo de lucro bajo criterios didácticos y formativos.
 Artículos informativos relacionados con esta página:  
 
 - [Usando populate con paginate y filtrando los resultados](https://javguerra.github.io/2022-10-29-populate-paginate-fitrado/)  
+- [Generar enlaces dinámicos de imágenes almacenadas en MongoDB](https://javguerra.github.io/2022-11-06-rutas-dinamicas-imagenes-mongodb/)  
