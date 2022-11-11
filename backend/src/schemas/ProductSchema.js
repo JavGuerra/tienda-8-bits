@@ -14,7 +14,8 @@ const productSchema = new Schema(
         price: { type: Number, min: 1 },
         year:  { type: Number, min: 1970, max: 1990 },
         photo: { type: String, lowercase: true, trim: true },
-        link:  { type: String, trim: true }
+        link:  { type: String, trim: true },
+        buy:   { type: String, trim: true }
     },
     { versionKey: false }
 );

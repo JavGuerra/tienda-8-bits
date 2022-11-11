@@ -30,7 +30,7 @@ const v1GetFilteredProducts = async (req, res) => {
 
     const filter = {};
     if (model) filter.model = { $regex: `.*${ model }.*` };
-    if (relevant !== undefined) filter.relevance = { $eq: relevant };
+    if (relevant) filter.relevance = { $eq: relevant };
     if (price) filter.price = { $lte: price };
     if (brand) filter["manufacturer.brand"] = { $regex: `.*${ brand }.*` };
     if (year ) filter.year  = { $eq:  year  };

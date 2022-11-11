@@ -8,7 +8,8 @@ const products = [
         price: 300,
         year: 1982,
         photo: "zx.jpg",
-        link: "https://es.wikipedia.org/wiki/Sinclair_ZX_Spectrum"
+        link: "https://es.wikipedia.org/wiki/Sinclair_ZX_Spectrum",
+        buy: "https://www.ebay.es/"
     },
     {
         model: "ZX81",
@@ -19,7 +20,8 @@ const products = [
         price: 100,
         year: 1981,
         photo: "zx81.jpg",
-        link: "https://es.wikipedia.org/wiki/Sinclair_ZX81"
+        link: "https://es.wikipedia.org/wiki/Sinclair_ZX81",
+        buy: "https://www.ebay.es/"
     },
     {
         model: "SORD M5",
@@ -30,7 +32,8 @@ const products = [
         price: 150,
         year: 1982,
         photo: "m5.jpg",
-        link: "https://es.wikipedia.org/wiki/Sord_M5"
+        link: "https://es.wikipedia.org/wiki/Sord_M5",
+        buy: "https://www.ebay.es/"
     },
     {
         model: "TI 99/4A",
@@ -41,7 +44,8 @@ const products = [
         price: 250,
         year: 1984,
         photo: "ti99.jpg",
-        link: "https://es.wikipedia.org/wiki/Texas_Instruments_TI-99/4A"
+        link: "https://es.wikipedia.org/wiki/Texas_Instruments_TI-99/4A",
+        buy: "https://www.ebay.es/"
     },
     {
         model: "Commodore 64",
@@ -52,7 +56,8 @@ const products = [
         price: 250,
         year: 1982,
         photo: "c64.jpg",
-        link: "https://es.wikipedia.org/wiki/Commodore_64"
+        link: "https://es.wikipedia.org/wiki/Commodore_64",
+        buy: "https://www.ebay.es/"
     }
 ];
 
