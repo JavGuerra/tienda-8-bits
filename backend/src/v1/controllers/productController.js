@@ -13,8 +13,8 @@ const insertRoutes = data => {
 }
 
 const v1GetFilteredProducts = async (req, res) => {
-    let { model, relevant, price, brand, year, sortmodel = 1, sortrelevant = 1,
-        sortprice = 1, sortyear = 1, page = 1, limit = 10, } = req.query;
+    let { page = 1, limit = 10, model, brand, price, year, relevant,
+        sortmodel = 1, sortprice = 1, sortyear = 1,  } = req.query;
 
     if (relevant) relevant = stringToBoolean(relevant.trim().toLowerCase());
     if (model) model = model.trim().toUpperCase();
@@ -26,7 +26,6 @@ const v1GetFilteredProducts = async (req, res) => {
     if (sortmodel !== '-1') sortmodel = 1;
     if (sortprice !== '-1') sortprice = 1;
     if (sortyear  !== '-1') sortyear  = 1;
-    if (sortrelevant !== '-1') sortrelevant = 1;
 
     const filter = {};
     if (model) filter.model = { $regex: `.*${ model }.*` };
@@ -35,7 +34,7 @@ const v1GetFilteredProducts = async (req, res) => {
     if (brand) filter["manufacturer.brand"] = { $regex: `.*${ brand }.*` };
     if (year ) filter.year  = { $eq:  year  };
 
-    const sort = { model: sortmodel, relevance: sortrelevant, price: sortprice, year: sortyear };
+    const sort = { model: sortmodel, price: sortprice, year: sortyear };
     
     const populate = { path: "manufacturer.ref", select: "-_id" };
 
