@@ -13,7 +13,7 @@ const insertRoutes = data => {
 }
 
 const v1GetFilteredProducts = async (req, res) => {
-    let { page = 1, limit = 10, model, brand, price, year, relevant,
+    let { page = 1, limit = 12, model, brand, price, year, relevant,
         sortmodel = 1, sortprice = 1, sortyear = 1,  } = req.query;
 
     if (relevant) relevant = stringToBoolean(relevant.trim().toLowerCase());
