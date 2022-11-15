@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="39.6875mm"
+   height="39.6875mm"
+   viewBox="0 0 39.6875 39.6875"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="bg.svg"
+   inkscape:export-filename="bg.png"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.8476563"
+     inkscape:cx="104.40552"
+     inkscape:cy="392.25804"
+     inkscape:window-width="1920"
+     inkscape:window-height="1037"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5" />
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath370">
+      <rect
+         style="fill:#b3b3b3;stroke-width:2.31408"
+         id="rect372"
+         width="219.87088"
+         height="219.87088"
+         x="-322.67307"
+         y="128.16156"
+         transform="matrix(0.9362163,-0.35142431,0.9362163,0.35142431,0,0)" />
+    </clipPath>
+  </defs>
+  <g
+     id="layer1"
+     transform="matrix(0.29296877,0,0,0.29296877,-7.1377273,-24.565293)"
+     style="opacity:1">
+    <g
+       id="g356"
+       transform="matrix(0.32904743,0.32904743,-0.87660289,0.87660289,223.16849,4.8867387)"
+       clip-path="url(#clipPath370)">
+      <rect
+         style="fill:#ff0000;stroke-width:0.955616"
+         id="rect344"
+         width="33.866665"
+         height="203.2"
+         x="24.363447"
+         y="56.803833" />
+      <rect
+         style="fill:#ffff00;stroke-width:0.955616"
+         id="rect346"
+         width="33.866665"
+         height="203.2"
+         x="58.23011"
+         y="56.803833" />
+      <rect
+         style="fill:#00ff00;stroke-width:0.955616"
+         id="rect348"
+         width="33.866665"
+         height="203.2"
+         x="92.096771"
+         y="56.803833" />
+      <rect
+         style="fill:#00ffff;stroke-width:0.955616"
+         id="rect350"
+         width="33.866665"
+         height="203.2"
+         x="125.96344"
+         y="56.803833" />
+    </g>
+  </g>
+</svg>
