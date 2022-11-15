@@ -44,7 +44,12 @@ __Modos de uso__:
 __Ruta y puerto «dev»__: http://localhost:3001/
 
 __Características destacadas__:
-* ---- 
+* El diseño es adaptable (responsive) según el dispositivo.  
+* CSS propio. No usa frameworks.  
+* Es accesible (revisado con el complemento [WAVE](https://wave.webaim.org/)).   
+* Implementa el protocolo [Open Graph](https://ogp.me/) para la correcta inserción de la web en RRSS.  
+* Es compatible con Progessive Web Aplication ([PWA](https://developer.mozilla.org/es/docs/Web/Progressive_web_apps)) a través de fichero [manifest.json](https://developer.mozilla.org/es/docs/Web/Manifest), por lo que la página puede ser instalada en dispositivos móviles como una web app.  
+* Ha sido probada con los navegadores web Firefox y Chrome.  
 
 ## Fuentes
 
