@@ -34,7 +34,7 @@ __Características destacadas__:
 
 ## Front end
 
-__Tecnologías__: React + Vite, axios, react-router-dom, react-hook-form
+__Tecnologías__: React + Vite, axios, react-router-dom, react-hook-form  
 __Otros módulos propios__: setSpin, inactiveBtn
 
 __Modos de uso__:
