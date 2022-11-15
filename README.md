@@ -41,7 +41,10 @@ __Modos de uso__:
 * Uso en desarrollo: `npm run dev`  
 * Para su uso en producción, construir con: `npm run build`  
 
-__Ruta y puerto «dev»__: http://localhost:5173/
+__Ruta y puerto «dev»__: http://localhost:3001/
+
+__Características destacadas__:
+* ---- 
 
 ## Fuentes
 
