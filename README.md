@@ -3,6 +3,10 @@
 Por: Javier Guerra  
 Noviembre 2022
 
+## La práctica
+
+Ver el fichero `enunciado.pdf` para conocer el enunciado.
+
 ## Back end
 
 __Tecnologías__: Node + Express + Mongodb + Mongoose  
