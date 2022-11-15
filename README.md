@@ -5,7 +5,7 @@ Noviembre 2022
 
 ## La práctica
 
-Ver el fichero `enunciado.pdf` para conocer el enunciado.
+Ver el fichero `enunciado.pdf` para conocer los requisitos de la práctica.
 
 ## Back end
 
