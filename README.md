@@ -1,12 +1,12 @@
 # Práctica final del Bootcamp Full Stack Web Developer
 
-Por. Javier Guerra  
+Por: Javier Guerra  
 Noviembre 2022
 
 ## Back end
 
 __Tecnologías__: Node + Express + Mongodb + Mongoose  
-__Otros módulos__: compression, cors, dotenv, nodemon, mongoose-paginator-v2.
+__Otros módulos__: compression, cors, dotenv, nodemon, mongoose-paginator-v2
 
 __Instalación__:
 * Renombrar `.env.example` a `.env` y completar los datos requeridos
@@ -30,8 +30,8 @@ __Características destacadas__:
 
 ## Front end
 
-__Tecnologías__: React + Vite  
-__Otros módulos__: 
+__Tecnologías__: React + Vite, axios, react-router-dom, react-hook-form
+__Otros módulos propios__: setSpin, inactiveBtn
 
 __Modos de uso__:
 * Uso en desarrollo: `npm run dev`  
