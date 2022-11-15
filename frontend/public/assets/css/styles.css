@@ -363,6 +363,30 @@ footer a:hover {
     text-decoration: underline;
 }
 
+.info-column {
+    margin: -1em 0 2em;
+}
+
+.info-column figure {
+    margin: 1.5em 0;
+}
+
+.info-column li {
+    margin-bottom: 0.5em;
+}
+
+.info-column figcaption {
+    font-style: italic;
+    font-size: small;
+    margin-top: 0.5em;
+}
+
+.info-column img {
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
 @media (min-width: 993px) {
     h1 {
         font-size: 48px;
@@ -441,6 +465,15 @@ footer a:hover {
     .bg-sort {
         height: 28px;
         font-size: medium;
+    }
+
+    .info-column {
+        width: 67%;
+    }
+
+    .info-column img {
+        width: 135%;
+        height: auto;
     }
 }
 
