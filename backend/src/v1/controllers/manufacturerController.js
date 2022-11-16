@@ -8,7 +8,7 @@ const insertRoutes = data => {
 }
 
 const v1GetAllManufacturers = async (req, res) => {
-    let result = await getAllManufacturers();
+    let result = await getAllManufacturers( { brand: 1 } );
     const response_code = (result.length) ? 0 : 1;
     if (response_code === 0) result = insertRoutes(result);
     res.json({response_code, result});

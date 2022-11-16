@@ -21,7 +21,7 @@ const v1GetFilteredProducts = async (req, res) => {
     if (brand) brand = brand.trim().toUpperCase();
     if (isNaN(price) || price <= 0) price = null;
     if (isNaN(page ) || page  < 1 ) page = 1;
-    if (isNaN(limit) || limit < 1 || limit > 10) limit = 10;
+    if (isNaN(limit) || limit < 1 || limit > 24) limit = 12;
     if (isNaN(year ) || year  < 1970 || year > 1990) year = null;
     if (sortmodel !== '-1') sortmodel = 1;
     if (sortprice !== '-1') sortprice = 1;

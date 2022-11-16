@@ -1,7 +1,7 @@
 import Manufacturer from '../schemas/ManufacturerSchema.js';
 
-const getAllManufacturers = async () => {
-    return await Manufacturer.find().exec();
+const getAllManufacturers = async (sort) => {
+    return await Manufacturer.find().sort(sort).exec();
 }
 
 const getManufacturerByBrand = async (filter) => {
