@@ -77,12 +77,12 @@ h2  {
 #cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 1.75em;
     justify-content: center;
 }
 
 .card {
-    width: 250px;
+    width: 245px;
     height: auto;
     border: 1px solid lightblue;
     background-color: aliceblue;
@@ -95,7 +95,7 @@ h2  {
 }
 
 .card-image {
-    width: 250px;
+    width: 245px;
     height: auto;
     transition: 0.3s ease;
     transition-delay: 1s;
