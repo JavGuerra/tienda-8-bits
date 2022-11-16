@@ -1,9 +1,21 @@
 const products = [
     {
-        model: "ZX Spectrum",
+        model: "ZX Spectrum 16K",
         code: "001",
         manufacturer: "001",
-        info: "16 o 48K. Sencillo y popular. Gran variedad de accesorios y software. Teclado incómodo.",
+        info: "16Kb. Sencillo y popular. Gran variedad de accesorios y software. Teclado incómodo.",
+        relevance: false,
+        price: 200,
+        year: 1982,
+        photo: "zx.jpg",
+        link: "https://es.wikipedia.org/wiki/Sinclair_ZX_Spectrum",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "ZX Spectrum 48K",
+        code: "002",
+        manufacturer: "001",
+        info: "48K. Sencillo y popular. Gran variedad de accesorios y software. Teclado incómodo.",
         relevance: true,
         price: 300,
         year: 1982,
@@ -12,8 +24,20 @@ const products = [
         buy: "https://www.ebay.es/"
     },
     {
-        model: "ZX81",
-        code: "002",
+        model: "Sinclair ZX80",
+        code: "003",
+        manufacturer: "001",
+        info: "1Kb. Poco sofisticado, pero ampliable. Precio de salida razonable. Teclado pésimo.",
+        relevance: false,
+        price: 100,
+        year: 1980,
+        photo: "zx80.jpg",
+        link: "https://es.wikipedia.org/wiki/Sinclair_ZX80",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "Sinclair ZX81",
+        code: "004",
         manufacturer: "001",
         info: "1Kb. Poco sofisticado, pero ampliable. Precio de salida razonable. Teclado pésimo.",
         relevance: false,
@@ -25,7 +49,7 @@ const products = [
     },
     {
         model: "SORD M5",
-        code: "003",
+        code: "005",
         manufacturer: "002",
         info: "4Kb. Ampliable a 36Kb. Bien construido. BASIC limitado.",
         relevance: false,
@@ -37,7 +61,7 @@ const products = [
     },
     {
         model: "TI 99/4A",
-        code: "004",
+        code: "006",
         manufacturer: "003",
         info: "16Kb. Ampliable a 52Kb. Buen teclado y buen precio. BASIC lento.",
         relevance: true,
@@ -49,7 +73,7 @@ const products = [
     },
     {
         model: "Commodore 64",
-        code: "005",
+        code: "007",
         manufacturer: "004",
         info: "64Kb. Buen teclado y precio. Excelentes gráficos y sonido. BASIC limitado.",
         relevance: true,
@@ -61,7 +85,7 @@ const products = [
     },
     {
         model: "Commodore Vic 20",
-        code: "006",
+        code: "008",
         manufacturer: "004",
         info: "5Kb. Ampliable a 32Kb. Cartuchos ROM. Precio de salida elevado.",
         relevance: false,
@@ -72,10 +96,22 @@ const products = [
         buy: "https://www.ebay.es/"
     },
     {
-        model: "Dragón 32/64",
-        code: "007",
+        model: "Dragon 64",
+        code: "009",
         manufacturer: "005",
-        info: "32 o 64Kb. Modelo popular con teclado robusto. Compatible con TSR-80.",
+        info: "64Kb. Modelo popular con teclado robusto. Compatible con TSR-80.",
+        relevance: false,
+        price: 250,
+        year: 1982,
+        photo: "dragon.jpg",
+        link: "https://es.wikipedia.org/wiki/Dragon_32/64",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "Dragon 32",
+        code: "010",
+        manufacturer: "005",
+        info: "32Kb. Modelo popular con teclado robusto. Compatible con TSR-80.",
         relevance: false,
         price: 250,
         year: 1982,
@@ -85,7 +121,7 @@ const products = [
     },
     {
         model: "Epson HX-20",
-        code: "008",
+        code: "011",
         manufacturer: "006",
         info: "16Kb. Ampliable a 32Kb. Portátil. Incluye mini-pantalla e impresora.",
         relevance: false,
@@ -97,7 +133,7 @@ const products = [
     },
     {
         model: "Atari 400",
-        code: "009",
+        code: "012",
         manufacturer: "007",
         info: "16Kb. Bajo costo. Amplio catálogo de software. Mal teclado. Cartuchos.",
         relevance: false,
@@ -109,7 +145,7 @@ const products = [
     },
     {
         model: "Atari 800",
-        code: "010",
+        code: "013",
         manufacturer: "007",
         info: "48Kb. Teclado mejorado. Amplio catálogo de software. Programable.",
         relevance: false,
@@ -121,9 +157,21 @@ const products = [
     },
     {
         model: "BBC Micro",
-        code: "011",
+        code: "014",
         manufacturer: "008",
-        info: "16 o 32Kb. Popular. BASIC versátil. Buen teclado y bien construido.",
+        info: "16Kb. Popular. BASIC versátil. Buen teclado y bien construido.",
+        relevance: false,
+        price: 350,
+        year: 1981,
+        photo: "bbc.jpg",
+        link: "https://es.wikipedia.org/wiki/BBC_Micro",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "BBC Micro B",
+        code: "015",
+        manufacturer: "008",
+        info: "32Kb. Popular. BASIC versátil. Buen teclado y bien construido.",
         relevance: true,
         price: 350,
         year: 1981,
@@ -133,7 +181,7 @@ const products = [
     },
     {
         model: "Colour Genie",
-        code: "012",
+        code: "016",
         manufacturer: "009",
         info: "32Kb. Barato. Lento. Con buen teclado. Compatible con el TSR-80.",
         relevance: false,
