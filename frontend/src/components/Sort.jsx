@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import SortIcon from "./SortIcon";
 
 const Sort = ({sortData, setSortData, setCurrentPage}) => {
@@ -55,7 +54,8 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
                 </label> 
             </li>
             <li>
-                <select value={limit} onChange={handleSelect} >
+                <label htmlFor="cardsNumber" className="sr">Tarjetas: </label>
+                <select id="cardsNumber" value={limit} onChange={handleSelect} >
                     <option value="6">6</option>
                     <option value="8">8</option>
                     <option value="12">12</option>
