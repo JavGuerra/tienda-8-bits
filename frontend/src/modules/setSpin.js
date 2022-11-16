@@ -7,22 +7,22 @@ let areSpins = 0;
  * @param {Boolean} status 
  */
 function setSpin(status) {
-    status ? spins++ : spins--;
-    if (status && !areSpins) {
-        areSpins = setInterval(checkSpin, 300);
-        document.getElementById('zone').showModal();
-    }
+  status ? spins++ : spins--;
+  if (status && !areSpins) {
+    areSpins = setInterval(checkSpin, 300);
+    document.getElementById('zone').showModal();
+  }
 }
 
 /**
  * Comprueba si el valor de spin esta a cero para desactivar el spin.
  */
 function checkSpin() {
-    if (!spins) {
-        clearInterval(areSpins);
-        areSpins = 0;
-        document.getElementById('zone').close();
-    }
+  if (!spins) {
+    clearInterval(areSpins);
+    areSpins = 0;
+    document.getElementById('zone').close();
+  }
 }
 
 export default setSpin;

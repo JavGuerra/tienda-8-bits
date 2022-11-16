@@ -4,11 +4,11 @@
  * @returns String
  */
 function readStatus(dataStatus) {
-    return (
-        (dataStatus === 0) ? 'OK' :
-        (dataStatus === 1) ? 'Sin coincidencias' :
-        'Error'
-    );
+  return (
+    (dataStatus === 0) ? 'OK' :
+    (dataStatus === 1) ? 'Sin coincidencias' :
+    'Error'
+  );
 }
 
 export default readStatus;

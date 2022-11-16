@@ -4,7 +4,7 @@
  * @returns String
  */
 function clearString(data) {
-    return data === undefined ? "" : data.trim();
+  return data === undefined ? "" : data.trim();
 }
 
 export default clearString;
