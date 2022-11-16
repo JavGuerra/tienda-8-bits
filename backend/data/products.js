@@ -72,8 +72,20 @@ const products = [
         buy: "https://www.ebay.es/"
     },
     {
-        model: "Commodore 64",
+        model: "Commodore PET",
         code: "007",
+        manufacturer: "004",
+        info: "4Kb. Varios modelos. Pantalla y ordenador en una pieza. Aspecto futurista.",
+        relevance: true,
+        price: 650,
+        year: 1977,
+        photo: "pet.jpg",
+        link: "https://es.wikipedia.org/wiki/Commodore_PET",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "Commodore 64",
+        code: "008",
         manufacturer: "004",
         info: "64Kb. Buen teclado y precio. Excelentes gráficos y sonido. BASIC limitado.",
         relevance: true,
@@ -85,7 +97,7 @@ const products = [
     },
     {
         model: "Commodore Vic 20",
-        code: "008",
+        code: "009",
         manufacturer: "004",
         info: "5Kb. Ampliable a 32Kb. Cartuchos ROM. Precio de salida elevado.",
         relevance: false,
@@ -97,9 +109,9 @@ const products = [
     },
     {
         model: "Dragon 64",
-        code: "009",
+        code: "010",
         manufacturer: "005",
-        info: "64Kb. Modelo popular con teclado robusto. Compatible con TSR-80.",
+        info: "64Kb. Modelo popular con teclado robusto. Compatible con TSR-80 CoCo.",
         relevance: false,
         price: 250,
         year: 1982,
@@ -109,9 +121,9 @@ const products = [
     },
     {
         model: "Dragon 32",
-        code: "010",
+        code: "011",
         manufacturer: "005",
-        info: "32Kb. Modelo popular con teclado robusto. Compatible con TSR-80.",
+        info: "32Kb. Modelo popular con teclado robusto. Compatible con TRS-80 CoCo.",
         relevance: false,
         price: 250,
         year: 1982,
@@ -121,7 +133,7 @@ const products = [
     },
     {
         model: "Epson HX-20",
-        code: "011",
+        code: "012",
         manufacturer: "006",
         info: "16Kb. Ampliable a 32Kb. Portátil. Incluye mini-pantalla e impresora.",
         relevance: false,
@@ -133,7 +145,7 @@ const products = [
     },
     {
         model: "Atari 400",
-        code: "012",
+        code: "013",
         manufacturer: "007",
         info: "16Kb. Bajo costo. Amplio catálogo de software. Mal teclado. Cartuchos.",
         relevance: false,
@@ -145,7 +157,7 @@ const products = [
     },
     {
         model: "Atari 800",
-        code: "013",
+        code: "014",
         manufacturer: "007",
         info: "48Kb. Teclado mejorado. Amplio catálogo de software. Programable.",
         relevance: false,
@@ -157,7 +169,7 @@ const products = [
     },
     {
         model: "BBC Micro",
-        code: "014",
+        code: "015",
         manufacturer: "008",
         info: "16Kb. Popular. BASIC versátil. Buen teclado y bien construido.",
         relevance: false,
@@ -169,7 +181,7 @@ const products = [
     },
     {
         model: "BBC Micro B",
-        code: "015",
+        code: "016",
         manufacturer: "008",
         info: "32Kb. Popular. BASIC versátil. Buen teclado y bien construido.",
         relevance: true,
@@ -181,14 +193,98 @@ const products = [
     },
     {
         model: "Colour Genie",
-        code: "016",
+        code: "017",
         manufacturer: "009",
-        info: "32Kb. Barato. Lento. Con buen teclado. Compatible con el TSR-80.",
+        info: "32Kb. Barato. Lento. Con buen teclado. Compatible con el TRS-80 CoCo.",
         relevance: false,
         price: 400,
         year: 1982,
         photo: "genie.jpg",
         link: "https://en.wikipedia.org/wiki/Colour_Genie",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "Inves Spectrum +",
+        code: "018",
+        manufacturer: "010",
+        info: "48Kb. Rediseño del Spectrum +, con teclado español puerto joystick y mejoras en la ROM.",
+        relevance: true,
+        price: 400,
+        year: 1986,
+        photo: "inves.jpg",
+        link: "https://es.wikipedia.org/wiki/Investr%C3%B3nica_Inves_Spectrum_%2B",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "TRS-80 Color",
+        code: "019",
+        manufacturer: "011",
+        info: "4Kb, ampliables. Muy popular, fue versionado por otras compañías.",
+        relevance: true,
+        price: 600,
+        year: 1981,
+        photo: "coco.jpg",
+        link: "https://es.wikipedia.org/wiki/TRS-80_Color_Computer",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "Apple ][",
+        code: "020",
+        manufacturer: "012",
+        info: "4Kb, ampliables. Expandible. Popular y extendido en el ámbito profesional.",
+        relevance: true,
+        price: 650,
+        year: 1977,
+        photo: "apple2.jpg",
+        link: "https://es.wikipedia.org/wiki/Apple_II",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "Jupiter ACE",
+        code: "021",
+        manufacturer: "013",
+        info: "1Kb ampliable. Lenguaje de programación FORTH. Teclado pobre.",
+        relevance: false,
+        price: 250,
+        year: 1982,
+        photo: "ace.jpg",
+        link: "https://es.wikipedia.org/wiki/Jupiter_Ace",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "Camputers Lynx",
+        code: "022",
+        manufacturer: "014",
+        info: "48Kb. Aspecto elegante. BASIC avanzado. Teclado profesional.",
+        relevance: false,
+        price: 200,
+        year: 1983,
+        photo: "lynx.jpg",
+        link: "https://es.wikipedia.org/wiki/Camputers_Lynx",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "NewBrain",
+        code: "023",
+        manufacturer: "015",
+        info: "32Kb, ampliable a 2Mb. Hay modelo con impresora semi-portátil. Teclado pobre.",
+        relevance: false,
+        price: 200,
+        year: 1982,
+        photo: "newbrain.jpg",
+        link: "https://es.wikipedia.org/wiki/Grundy_NewBrain",
+        buy: "https://www.ebay.es/"
+    },
+    {
+        model: "Oric 1",
+        code: "024",
+        manufacturer: "016",
+        info: "48Kb. Teclas estrechas. Limitada gama de software. Para principiantes.",
+        relevance: false,
+        price: 250,
+        year: 1982,
+        photo: "oric1.jpg",
+        link: "https://es.wikipedia.org/wiki/Oric_1",
         buy: "https://www.ebay.es/"
     }
 ];
