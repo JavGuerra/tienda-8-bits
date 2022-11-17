@@ -7,6 +7,8 @@ Noviembre 2022
 
 Ver el fichero `enunciado.pdf` para conocer los requisitos de la práctica.
 
+Ver el fichero `presentacion.pdf`para conocer los antecedentes de la práctica.
+
 ## Back end
 
 __Tecnologías__: Node + Express + Mongodb + Mongoose  
