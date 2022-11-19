@@ -122,7 +122,7 @@ const Home = () => {
           </section>
 
           <section>
-            {dataStatus === 0 &&
+            {dataStatus === 0 && finalPage > 1 &&
               <Paginator
                 totalDocs={totalDocs}
                 currentPage={currentPage}
