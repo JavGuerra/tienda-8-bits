@@ -47,6 +47,9 @@ const Home = () => {
 
     const searchUrl = url + page + params + filter;
 
+    setLogo("assets/img/img-logo.png");
+    setBrand("Todas las marcas 8 bits");
+
     inactiveBtn(sendBtnRef.current, true);
     setSpin(true);
 
@@ -67,10 +70,8 @@ const Home = () => {
               setBrand("Logo de " + response.data.result[0].brand);})
             .catch(error => console.log('Error: ', error.message));
         }
-        else {
-          setLogo("assets/img/img-logo.png");
-          setBrand("Todas las marcas 8 bits");
-        }
+
+        console.log(logo, brandTxt);
 
       })
       .catch((error) => {
