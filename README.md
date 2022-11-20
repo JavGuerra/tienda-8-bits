@@ -22,10 +22,10 @@ __Modos de uso__:
 * Uso en desarrollo: `npm run dev`    
 * Uso en producción: `npm start`
 
-__Ruta y puerto «dev»__: http://localhost:3000/v1/ 
+__Ruta y puerto «dev»__: http://localhost:3000/v1/  
 __API disponible en__: 
 
-Ver instrucciones de uso de la API en: http://localhost:3000/
+Ver instrucciones de uso de la API en: http://localhost:3000/  
 Instrucciones disponibles en:
 
 __Características destacadas__:
