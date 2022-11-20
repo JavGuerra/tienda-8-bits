@@ -10,7 +10,7 @@ const Contact = () => {
       <div className="frame bg-contact"></div>
       <div className="container">
         <h2>Contactar</h2>
-        <h3>Blog sobre programación</h3>
+        <h3>Mi blog sobre programación</h3>
         <img id="qr" src="assets/img/qr.svg" alt="Código QR" />
           <p><br/>Git-blog personal sobre tecnología y programación.</p>
           <p>Visítalo en:<br/>
