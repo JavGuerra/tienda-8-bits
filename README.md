@@ -10,7 +10,7 @@ Ver el fichero `presentacion.pdf` para conocer los antecedentes de la práctica.
 
 ## Back end
 
-__Tecnologías__: Node + Express + Mongodb + Mongoose  
+__Tecnologías__: Node.JS + Express + MongoDB + Mongoose  
 __Otros módulos__: compression, cors, dotenv, nodemon, mongoose-paginator-v2
 
 __Instalación__:
