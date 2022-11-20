@@ -10,7 +10,7 @@ const Paginator = ({totalDocs, currentPage, finalPage, limit, next, prev}) => {
     <div id="paginator">
       {finalPage === 1 &&
         <span>&nbsp;
-          {totalDocs}&nbsp;<small>producto{totalDocs > 1 ? "s": ""}</small>
+          {totalDocs}&nbsp;<small>producto{totalDocs > 1 ? "s" : ""}</small>
         &nbsp;</span>
       }
 
