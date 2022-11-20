@@ -4,7 +4,7 @@
 body {
     line-height: 1.5;
     padding: 0;
-    margin: 0;
+    margin: 10px 0 0;
     font-family: Arial, Helvetica, sans-serif;
     /* background-color: WhiteSmoke; */
     background: WhiteSmoke url('../img/bg.svg') bottom right no-repeat fixed;
@@ -27,10 +27,10 @@ h1 {
     display: inline-block;
     font-family: 'Nabla', cursive;
     font-size: 36px;
+    margin-top: 10px;
     padding: 0 0.5em;
     background: linear-gradient(to right, MediumBlue 0%, BlueViolet 100%);
     border-radius: 1em;
-    margin-top: -5px;
 }
 
 h2  {
@@ -49,6 +49,7 @@ h2  {
 .main-nav ul {
     display: inline;
     list-style: none;
+    margin: 0;
     padding: 0;
     float: right;
 }
@@ -428,7 +429,6 @@ footer a:hover {
 @media (min-width: 993px) {
     h1 {
         font-size: 48px;
-        margin-top: 20px;
         margin-bottom: 20px;
     }
 
@@ -442,11 +442,12 @@ footer a:hover {
     }
 
     .main-nav ul  {
-        margin-top: 4em;
+        margin-top: 50px;
+        margin-right: -20px;
     }
 
     .main-nav li {
-        padding: 0.5em;
+        padding: 0.35em;
         font-size: large;
     }
 
