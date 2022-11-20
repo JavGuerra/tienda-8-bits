@@ -22,9 +22,11 @@ __Modos de uso__:
 * Uso en desarrollo: `npm run dev`    
 * Uso en producción: `npm start`
 
-__Ruta y puerto «dev»__: http://localhost:3000/v1/  
+__Ruta y puerto «dev»__: http://localhost:3000/v1/ 
+__API disponible en__: 
 
 Ver instrucciones de uso de la API en: http://localhost:3000/
+Instrucciones disponibles en:
 
 __Características destacadas__:
 * Emplea módulos ESM. 
@@ -42,7 +44,8 @@ __Modos de uso__:
 * Uso en desarrollo: `npm run dev`  
 * Para su uso en producción, construir con: `npm run build`  
 
-__Ruta y puerto «dev»__: http://localhost:3001/proyecto/tienda8bits/
+__Ruta y puerto «dev»__: http://localhost:3001/proyecto/tienda8bits/  
+__Aplicación disponible en__: https://javguerra.badared.com/proyecto/tienda8bits/  
 
 __Características destacadas__:
 * El diseño es adaptable (responsive) según el dispositivo.  
@@ -54,6 +57,12 @@ __Características destacadas__:
 * Ha sido probada con los navegadores web Firefox y Chrome.  
 * Tratamiento de imágenes con software libre: Gimp e InkScape.  
 
+## Acceder a la página web
+
+[Acceder a la página web](https://javguerra.badared.com/proyecto/tienda8bits/) de la práctica.  
+
+![Código QR](qrcode.svg)
+
 ## Fuentes
 
 * Wikipedia  
@@ -64,6 +73,8 @@ __Características destacadas__:
 Sobre el código fuente: [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)  
 Sobre el contenido de la web: [(CC) BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/es/)  
 Sobre las fotos: Son propiedad de sus respectivos autores.  
+Sobre las fuentes de letra: [Google Font](https://fonts.google.com/).  
+Sobre los iconos: [Heroicons](https://heroicons.com/).  
 Material usado sin ánimo de lucro bajo criterios didácticos y formativos.  
 
 ## Saber más
