@@ -88,27 +88,25 @@ const Home = () => {
   return (
     <>
       <div className="frame bg-home">
-        <div className="container">
-          <div className="bg-container">
-            
-            <Logo url={logo} alt={brandTxt} />
+        <div className="bg-container">
+          
+          <Logo url={logo} alt={brandTxt} />
 
-            <div className="bg-controls">
-              <Form
-                url={url}
-                setSearchData={setSearchData}
-                setCurrentPage={setCurrentPage}
-                sendBtnRef={sendBtnRef}
-              />
+          <div className="bg-controls">
+            <Form
+              url={url}
+              setSearchData={setSearchData}
+              setCurrentPage={setCurrentPage}
+              sendBtnRef={sendBtnRef}
+            />
 
-              <Sort
-                sortData={sortData}
-                setSortData={setSortData}
-                setCurrentPage={setCurrentPage}
-              />
-            </div>
-            
+            <Sort
+              sortData={sortData}
+              setSortData={setSortData}
+              setCurrentPage={setCurrentPage}
+            />
           </div>
+          
         </div>
       </div>
 

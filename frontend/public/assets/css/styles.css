@@ -30,8 +30,7 @@ h1 {
     padding: 0 0.5em;
     background: linear-gradient(to right, MediumBlue 0%, BlueViolet 100%);
     border-radius: 1em;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: -5px;
 }
 
 h2  {
@@ -47,12 +46,16 @@ h2  {
     margin-bottom: 15px;
 }
 
+.main-nav ul {
+    display: inline;
+    list-style: none;
+    padding: 0;
+    float: right;
+}
+
 .main-nav li {
     display: inline;
-    text-decoration: none;
     padding: 0.25em;
-    float: right;
-    margin-top: -10px;
 }
 
 .main-nav a {
@@ -357,6 +360,10 @@ h2  {
     color: #566b78;
 }
 
+footer {
+    margin-bottom: 2em;
+}
+
 footer a {
     text-decoration: none;
     color: #333;
@@ -421,7 +428,8 @@ footer a:hover {
 @media (min-width: 993px) {
     h1 {
         font-size: 48px;
-        margin-bottom: 25px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     h2 {
@@ -433,8 +441,11 @@ footer a:hover {
         max-width: 67em;
     }
 
+    .main-nav ul  {
+        margin-top: 4em;
+    }
+
     .main-nav li {
-        margin-top: 50px;
         padding: 0.5em;
         font-size: large;
     }
@@ -448,6 +459,8 @@ footer a:hover {
     }
 
     .bg-container {
+        margin: 0 auto;
+        max-width: 67em;
         padding: 15px 0;
         gap: 20px;
     }

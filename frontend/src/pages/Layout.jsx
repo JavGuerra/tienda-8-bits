@@ -4,6 +4,7 @@ const Layout = () => {
   return (
     <>
       <div className="container">
+        
         <nav className="main-nav">
           <ul>
             <li>
@@ -23,7 +24,9 @@ const Layout = () => {
             </li>
           </ul>
         </nav>
+
         <h1>Tienda 8 bits</h1>
+
       </div>
       <Outlet />
     </>
