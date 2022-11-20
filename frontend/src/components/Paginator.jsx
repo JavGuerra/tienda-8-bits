@@ -8,11 +8,18 @@ const Paginator = ({totalDocs, currentPage, finalPage, limit, next, prev}) => {
   
   return (
     <div id="paginator">
-      <span>
-        &nbsp;<small>Productos</small>&nbsp;{first}&nbsp;
-        <small>a</small>&nbsp;{last}&nbsp;
-        <small>de</small>&nbsp;{totalDocs}&nbsp;
-      </span>
+      {finalPage === 1 &&
+        <span>&nbsp;
+          {totalDocs}&nbsp;<small>producto{totalDocs > 1 ? "s": ""}</small>
+        &nbsp;</span>
+      }
+
+      {finalPage > 1 &&
+        <span>
+          &nbsp;<small>Productos</small>&nbsp;{first}&nbsp;
+          <small>a</small>&nbsp;{last}&nbsp;
+          <small>de</small>&nbsp;{totalDocs}&nbsp;
+        </span>}
 
       {finalPage > 1 && <div>
         <button disabled={currentPage === 1} onClick={() => prev()}>
