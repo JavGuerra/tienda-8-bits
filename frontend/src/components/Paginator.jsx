@@ -1,11 +1,17 @@
-const Paginator = ({totalDocs, currentPage, finalPage, next, prev}) => {
+const Paginator = ({totalDocs, currentPage, finalPage, limit, next, prev}) => {
+  
+  const first = (currentPage -1) * limit + 1;
+  const rest = currentPage === finalPage
+    ? first - 1 + (totalDocs % finalPage)
+    : limit;
+  const last = first - 1 + rest;
+  
   return (
     <div id="paginator">
       <span>
-        <small>Total:</small>&nbsp;<strong>{totalDocs}</strong>&nbsp;
-        <small>productos</small>&nbsp;•&nbsp;<small>pág.</small>&nbsp;
-        <strong>{currentPage}&nbsp;</strong><small>de</small>&nbsp;
-        <strong>{finalPage}</strong>
+        &nbsp;<small>Productos</small>&nbsp;{first}&nbsp;
+        <small>al</small>&nbsp;{last}&nbsp;
+        <small>de</small>&nbsp;{totalDocs}&nbsp;
       </span>
 
       <div>
@@ -15,6 +21,9 @@ const Paginator = ({totalDocs, currentPage, finalPage, next, prev}) => {
           <path strokeLinecap="round" strokeLinejoin="round"
           d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
         </svg>Anterior</button>
+
+        &nbsp;&nbsp;<small>Pág.</small>&nbsp;<strong>{currentPage}&nbsp;</strong>
+        <small>de</small>&nbsp;<strong>{finalPage}</strong>&nbsp;&nbsp;
 
         <button disabled={currentPage === finalPage} onClick={() => next()}>
         <svg xmlns="http://www.w3.org/2000/svg" className="icon" fill="none"

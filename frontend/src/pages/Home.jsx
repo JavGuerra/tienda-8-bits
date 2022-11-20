@@ -127,6 +127,7 @@ const Home = () => {
                 totalDocs={totalDocs}
                 currentPage={currentPage}
                 finalPage={finalPage}
+                limit={sortData.limit}
                 next={next}
                 prev={prev}
               />}
