@@ -6,8 +6,7 @@ Noviembre 2022
 ## La práctica
 
 Ver el fichero `enunciado.pdf` para conocer los requisitos de la práctica.
-
-Ver el fichero `presentacion.pdf`para conocer los antecedentes de la práctica.
+Ver el fichero `presentacion.pdf` para conocer los antecedentes de la práctica.  
 
 ## Back end
 
@@ -43,7 +42,7 @@ __Modos de uso__:
 * Uso en desarrollo: `npm run dev`  
 * Para su uso en producción, construir con: `npm run build`  
 
-__Ruta y puerto «dev»__: http://localhost:3001/
+__Ruta y puerto «dev»__: http://localhost:3001/proyecto/tienda8bits/
 
 __Características destacadas__:
 * El diseño es adaptable (responsive) según el dispositivo.  
