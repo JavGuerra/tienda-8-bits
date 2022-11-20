@@ -68,7 +68,7 @@ const Home = () => {
             .catch(error => console.log('Error: ', error.message));
         }
         else {
-          setLogo("/assets/img/img-logo.png");
+          setLogo("assets/img/img-logo.png");
           setBrand("Todas las marcas 8 bits");
         }
 
