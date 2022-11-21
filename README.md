@@ -5,8 +5,8 @@ Noviembre 2022
 
 ## La práctica
 
-Ver el fichero `enunciado.pdf` para conocer los requisitos de la práctica.  
-Ver el fichero `presentacion.pdf` para conocer los antecedentes de la práctica.  
+Ver el fichero [enunciado.pdf](enunciado.pdf) para conocer los requisitos de la práctica.  
+Ver el fichero [presentacion.pdf](presentacion.pdf) para conocer los antecedentes de la práctica.  
 Ver [info sobre la presentación](https://javguerra.github.io/2022-11-18-proyecto-final-bootcamp/) + [video](https://youtu.be/XlswjqhxJZ8).  
 
 ## Back end
