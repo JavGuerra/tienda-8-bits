@@ -4,7 +4,7 @@
 body {
     line-height: 1.5;
     padding: 0;
-    margin: 10px 0 0;
+    margin: 10px 0 3em 0;
     font-family: Arial, Helvetica, sans-serif;
     /* background-color: WhiteSmoke; */
     background: WhiteSmoke url('../img/bg.svg') bottom right no-repeat fixed;
@@ -344,7 +344,7 @@ h2  {
     border-radius: 12px;
     font-variant: small-caps;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-    width: 100px;
+    width: 110px;
     background-color: Plum;
     color: Purple;
 }
@@ -359,10 +359,6 @@ h2  {
     background-color: lightgray;
     cursor: not-allowed;
     color: #566b78;
-}
-
-footer {
-    margin-bottom: 2em;
 }
 
 footer a {

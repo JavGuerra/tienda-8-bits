@@ -110,11 +110,13 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container">
-        <Header title={"Catálogo"} />
+      <div>
+        <header className="container">
+          <Header title={"Catálogo"} />
+        </header>
 
         <main>
-          <section>
+          <section className="container">
             {dataStatus === 0 && <Result filteredData={filteredData} />}
             {dataStatus !== 0 &&
               <h3 className="noResult">{readStatus(dataStatus)}</h3>}
@@ -133,7 +135,10 @@ const Home = () => {
           </section>
         </main>
 
-        <Footer footer={footer} />
+        <footer className="container">
+          <Footer footer={footer} />
+        </footer>
+        
         <Zone />
       </div>
     </>
