@@ -5,7 +5,7 @@ const connectDB = async (url) => {
         await mongoose.connect(url);
         console.log('Conectado a BBDD MongoDB');
     } catch (error) {
-        console.error(err);
+        console.error(error);
     }
 
     const db = mongoose.connection;
