@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
+import helmet from 'helmet';
 
 import v1ManufacturerRoutes from '../v1/routes/manufacturerRoutes.js';
 import v1ProductRoutes from '../v1/routes/productRoutes.js';
@@ -11,6 +12,7 @@ const expressApp = express();
 
 expressApp.use(cors());
 expressApp.use(compression());
+expressApp.use(helmet({ crossOriginResourcePolicy: false }));
 
 expressApp.use((req, res, next) => {
     console.log('Ruta: ' + req.url);
