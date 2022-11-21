@@ -7,7 +7,7 @@ function readStatus(dataStatus) {
   return (
     (dataStatus === 0) ? 'OK' :
     (dataStatus === 1) ? 'Sin coincidencias' :
-    'Error'
+    'Datos...'
   );
 }
 
