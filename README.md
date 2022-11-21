@@ -23,10 +23,10 @@ __Modos de uso__:
 * Uso en producción: `npm start`
 
 __Ruta y puerto «dev»__: http://localhost:3000/v1/  
-__API disponible en__: 
+__API disponible en__: https://api-tienda8bits.up.railway.app/v1/
 
 Ver instrucciones de uso de la API en: http://localhost:3000/  
-Instrucciones disponibles en:
+Instrucciones disponibles en: https://api-tienda8bits.up.railway.app/
 
 __Características destacadas__:
 * Emplea módulos ESM. 
