@@ -10,9 +10,11 @@ const Info = () => {
       <div className="frame bg-info"></div>
       <div className="container">
         <h2>Info</h2>
+
         <div className="info-column">
           <p>La web, como hoy la conocemos, tiene su origen en dos hitos 
               históricos cercanos en el tiempo:</p>
+              
           <ol>
               <li>
                   El desarrollo de los sistemas de transmisión digital de datos
@@ -25,15 +27,18 @@ const Info = () => {
                   interfaces gráficas de usuario posteriores.
               </li>
           </ol>
+
           <figure>
             <img src="assets/img/trinidad.jpg" alt="La trinidad" />
             <figcaption>«La trinidad». De izquierda a derecha: Tandy TRS-80, 
               Apple ][, Commodore Pet, y sus periféricos. Foto propia.</figcaption>
           </figure> 
+
           <p>Ambos fenómenos se complementan. Desde entonces, más personas usan
             ordenadores personales para acceder a Internet, y la red y sus
             tecnologías han crecido para soportar la cada vez más especializada
             demanda de contenidos de los usuarios.</p>
+
           <p>Los ordenadores personales de aquella época, donde se gestó el mundo
             digital en el que vivimos, están pasando por un momento de esplendor,
             pues no son pocos los coleccionistas y estudiosos que adquieren estos
@@ -43,7 +48,10 @@ const Info = () => {
             de las primeras máquinas de 8 bits.</p>
           <p>Esta tienda es un ejemplo de ello.</p>
         </div>
-        <Footer footer={footer} />
+
+        <footer>
+          <Footer footer={footer} />
+        </footer>
       </div>
     </>
   );
