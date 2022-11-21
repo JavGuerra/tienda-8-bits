@@ -73,8 +73,8 @@ __Características destacadas__:
 Sobre el código fuente: [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)  
 Sobre el contenido de la web: [(CC) BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/es/)  
 Sobre las fotos: Son propiedad de sus respectivos autores.  
-Sobre las fuentes de letra: [Google Font](https://fonts.google.com/).  
-Sobre los iconos: [Heroicons](https://heroicons.com/).  
+Sobre las fuentes de letra: [Google Fonts](https://fonts.google.com/)  
+Sobre los iconos: [Heroicons](https://heroicons.com/)  
 Material usado sin ánimo de lucro bajo criterios didácticos y formativos.  
 
 ## Saber más
