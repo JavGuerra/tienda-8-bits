@@ -1,7 +1,9 @@
 const initVars = async () => {
     
-    const dotenv = await import('dotenv');
-    dotenv.config();
+    if (process.env.NODE_ENV !== 'production') {
+        const dotenv = await import('dotenv');
+        dotenv.config();
+    }
     
     let url;
     if (process.env.DB_SERVERTYPE === 'local') {
