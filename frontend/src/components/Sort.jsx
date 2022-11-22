@@ -10,7 +10,7 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
     sortObj[`${sortName}`] = order;
     setSortData(Object.assign(sortObj, {relevant, limit}));
     setCurrentPage(1);
-  } 
+  };
 
   const handleCheckBox = () => {
     setSortData({...sortData, relevant: !relevant});
