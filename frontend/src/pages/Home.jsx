@@ -17,7 +17,7 @@ import readStatus from "../modules/readStatus";
 const Home = () => {
 
   const { footer, url } = useConfig();
-  const sort = { sortmodel: 1, sortprice: 1, sortyear: 1, relevant: false, limit: 12 };
+  const sort = { sortmodel: 1, relevant: false, limit: 12 };
   const sendBtnRef = useRef();
 
   const next = () => setCurrentPage(prev => prev === finalPage ? prev : ++prev);
