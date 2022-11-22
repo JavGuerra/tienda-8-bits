@@ -35,7 +35,6 @@ const Home = () => {
 
 
   useEffect(() => {
-
     const { model, brand, price, year } = searchData;
     const { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
 

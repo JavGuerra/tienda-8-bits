@@ -2,7 +2,7 @@ import SortIcon from "./SortIcon";
 
 const Sort = ({sortData, setSortData, setCurrentPage}) => {
 
-  const { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
+  let { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
 
   const handleCheckBox = () => {
     setSortData({...sortData, relevant: !relevant});
@@ -21,7 +21,8 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
           name="Modelo"
           order={sortmodel}
           change={() => {
-            setSortData({...sortData, sortmodel: -sortmodel});
+            sortmodel = sortmodel ? -sortmodel : 1;
+            setSortData({sortmodel, relevant, limit});
             setCurrentPage(1);
           }} 
         />
@@ -31,7 +32,8 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
           name="Precio"
           order={sortprice}
           change={() => {
-            setSortData({...sortData, sortprice: -sortprice});
+            sortprice = sortprice ? -sortprice : 1;
+            setSortData({sortprice, relevant, limit});
             setCurrentPage(1);
           }} 
         />
@@ -41,7 +43,8 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
           name="Año"
           order={sortyear}
           change={() => {
-            setSortData({...sortData, sortyear: -sortyear});
+            sortyear = sortyear ? -sortyear : 1;
+            setSortData({sortyear, relevant, limit});
             setCurrentPage(1);
           }} 
         />
