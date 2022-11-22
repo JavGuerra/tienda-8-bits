@@ -37,7 +37,7 @@ const v1GetFilteredProducts = async (req, res) => {
     const sort = {};
     if (sortmodel) sort.model = Number(sortmodel);
     if (sortprice) sort.price = Number(sortprice);
-    if (sortyear ) sort.year  = Number(sortyear);
+    if (sortyear ) sort.year  = Number(sortyear );
     
     const populate = { path: "manufacturer.ref", select: "-_id" };
 
