@@ -4,22 +4,19 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
 
   const { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
 
-  const change = (sortName, order) => {
-    order = order ? -order : 1;
-    const sortObj = {};
-    sortObj[sortName] = order;
-    setSortData({...sortObj, relevant, limit});
+  const change = (Obj) => {
+    setSortData(Obj);
     setCurrentPage(1);
   };
 
-  const handleCheckBox = () => {
-    setSortData({...sortData, relevant: !relevant});
-    setCurrentPage(1);
+  const handleIcon = (sortName, order) => {
+    change({[sortName]: order ? -order : 1, relevant, limit});
   };
+
+  const handleCheckBox = () => change({...sortData, relevant: !relevant});
 
   const handleSelect = event => {
-    setSortData({...sortData, limit: Number(event.target.value)});
-    setCurrentPage(1);
+    change({...sortData, limit: Number(event.target.value)});
   };
 
   return (
@@ -29,7 +26,7 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
           name="Modelo"
           sortName="sortmodel"
           order={sortmodel}
-          change={change}
+          handleIcon={handleIcon}
         />
       </li>
       <li>
@@ -37,7 +34,7 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
           name="Precio"
           sortName="sortprice"
           order={sortprice}
-          change={change}
+          handleIcon={handleIcon}
         />
       </li>
       <li>
@@ -45,7 +42,7 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
           name="Año"
           sortName="sortyear"
           order={sortyear}
-          change={change}
+          handleIcon={handleIcon}
         />
       </li>
       <li>
