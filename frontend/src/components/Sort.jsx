@@ -2,7 +2,7 @@ import SortIcon from "./SortIcon";
 
 const Sort = ({sortData, setSortData, setCurrentPage}) => {
 
-  let { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
+  const { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
 
   const change = (sortName, order) => {
     order = order ? -order : 1;
