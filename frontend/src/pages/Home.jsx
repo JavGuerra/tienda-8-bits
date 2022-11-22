@@ -42,9 +42,10 @@ const Home = () => {
     const page   = `products?page=${currentPage}`;
     const params = `&model=${clearString(model)}&brand=${clearString(brand)}` +
       `&price=${clearString(price)}&year=${clearString(year)}`;
-    const filter = `&sortmodel=${sortmodel}&sortprice=${sortprice}` +
-      `&sortyear=${sortyear}&relevant=${relevant}&limit=${limit}`;
-
+    const filter = `&sortmodel=${clearString(sortmodel)}&sortprice=` +
+      `${clearString(sortprice)}&sortyear=${clearString(sortyear)}` +
+      `&relevant=${relevant}&limit=${limit}`;
+    
     const searchUrl = url + page + params + filter;
 
     setLogo("assets/img/img-logo.png");
@@ -56,7 +57,6 @@ const Home = () => {
     axios
       .get(searchUrl)
       .then((response) => {
-
         setStatus(response.data.response_code);
         setData(response.data.result.docs);
         setCurrentPage(response.data.result.page);
@@ -70,9 +70,6 @@ const Home = () => {
               setBrand("Logo de " + response.data.result[0].brand);})
             .catch(error => console.log('Error: ', error.message));
         }
-
-        console.log(logo, brandTxt);
-
       })
       .catch((error) => {
         setStatus(-1); // Devuelve error

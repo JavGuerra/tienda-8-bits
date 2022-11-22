@@ -14,7 +14,7 @@ Ver [info sobre la presentación](https://javguerra.github.io/2022-11-18-proyect
 ## Back end
 
 __Tecnologías__: Node.JS + Express + MongoDB + Mongoose  
-__Otros módulos__: compression, cors, dotenv, nodemon, mongoose-paginator-v2
+__Módulos__: compression, cors, helmet, dotenv, nodemon, mongoose-paginator-v2
 
 __Instalación__:
 * Renombrar `.env.example` a `.env` y completar los datos requeridos
@@ -25,23 +25,24 @@ __Modos de uso__:
 * Uso en desarrollo: `npm run dev`    
 * Uso en producción: `npm start`
 
-__Ruta y puerto «dev»__: http://localhost:3000/v1/  
+Ruta y puerto «dev»: http://localhost:3000/v1/  
 __API disponible en__: https://api-tienda8bits.up.railway.app/v1/
 
-Ver instrucciones de uso de la API en: http://localhost:3000/  
-Instrucciones disponibles en: https://api-tienda8bits.up.railway.app/
+Instrucciones de uso de la API en: http://localhost:3000/  
+__Instrucciones disponibles en__: https://api-tienda8bits.up.railway.app/
 
-__Características destacadas__:
+__Características destacadas de la API__:
 * Emplea módulos ESM. 
 * Está preparada para el versionado de la API.  
 * Está preparada para el uso de BBDD MongoDB local o en remoto (config.js).
+* Preserva la seguridad del acceso a la API con el uso del módulo `helmet`.  
 * Devuelve las rutas de los enlaces a las fotos y logos dinámicamente.  
 * Cuenta con documentación de la API.  
 
 ## Front end
 
 __Tecnologías__: React + Vite, axios, react-router-dom, react-hook-form  
-__Otros módulos propios__: setSpin, inactiveBtn  
+__Módulos propios__: setSpin, inactiveBtn  
 
 __Instalación__:
 * Cambiar la ruta `base` de la ubicación en el servidor en `vite.config.js`  
@@ -52,10 +53,10 @@ __Modos de uso__:
 * Uso en desarrollo: `npm run dev`  
 * Para su uso en producción, construir con: `npm run build`  
 
-__Ruta y puerto «dev»__: http://localhost:3001/proyecto/tienda8bits/  
+Ruta y puerto «dev»: http://localhost:3001/proyecto/tienda8bits/  
 __Aplicación disponible en__: https://javguerra.badared.com/proyecto/tienda8bits/  
 
-__Características destacadas__:
+__Características destacadas de la App__:
 * El diseño es adaptable (responsive) según el dispositivo.  
 * CSS propio. No usa frameworks.  
 * Es accesible (revisado con el complemento [WAVE](https://wave.webaim.org/)).   
