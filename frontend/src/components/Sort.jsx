@@ -7,8 +7,8 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
   const change = (sortName, order) => {
     order = order ? -order : 1;
     const sortObj = {};
-    sortObj[`${sortName}`] = order;
-    setSortData(Object.assign(sortObj, {relevant, limit}));
+    sortObj[sortName] = order;
+    setSortData({...sortObj, relevant, limit});
     setCurrentPage(1);
   };
 
