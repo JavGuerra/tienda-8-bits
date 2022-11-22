@@ -4,7 +4,7 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
 
   let { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
 
-  const change= (sortName, order) => {
+  const change = (sortName, order) => {
     order = order ? -order : 1;
     const sortObj = {};
     sortObj[`${sortName}`] = order;
