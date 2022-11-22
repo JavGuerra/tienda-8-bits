@@ -9,15 +9,14 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
     setCurrentPage(1);
   };
 
-  const handleIcon = (sortName, order) => {
+  const handleIcon = (sortName, order) =>
     change({[sortName]: order ? -order : 1, relevant, limit});
-  };
 
-  const handleCheckBox = () => change({...sortData, relevant: !relevant});
+  const handleCheckBox = () =>
+    change({...sortData, relevant: !relevant});
 
-  const handleSelect = event => {
+  const handleSelect = event => 
     change({...sortData, limit: Number(event.target.value)});
-  };
 
   return (
     <div className="bg-sort">
