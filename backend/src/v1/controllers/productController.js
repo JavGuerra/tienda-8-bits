@@ -41,7 +41,7 @@ const v1GetFilteredProducts = async (req, res) => {
     
     const populate = { path: "manufacturer.ref", select: "-_id" };
 
-    const options = { sort, populate, page, limit };
+    const options  = { sort, populate, page, limit };
 
     let result = await getFilteredProducts( filter, options );
     const response_code = result.docs.length ? 0 : 1;
