@@ -4,19 +4,19 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
 
   const { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
 
-  const change = (Obj) => {
+  const changeSort = (Obj) => {
     setSortData(Obj);
     setCurrentPage(1);
   };
 
   const handleIcon = (sortName, order) =>
-    change({ [sortName]: order ? -order : 1, relevant, limit });
+    changeSort({ [sortName]: order ? -order : 1, relevant, limit });
 
   const handleCheckBox = () =>
-    change({ ...sortData, relevant: !relevant });
+    changeSort({ ...sortData, relevant: !relevant });
 
   const handleSelect = event => 
-    change({ ...sortData, limit: Number(event.target.value) });
+    changeSort({ ...sortData, limit: Number(event.target.value) });
 
   return (
     <div className="bg-sort">
