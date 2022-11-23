@@ -231,6 +231,7 @@ h2  {
 
 .bg-form-input div {
     width: 100%;
+    text-align: center;
 }
 
 .bg-form-input input,
