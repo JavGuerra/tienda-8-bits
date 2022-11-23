@@ -4,8 +4,8 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
 
   const { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
 
-  const changeSort = (ObjSort) => {
-    setSortData(ObjSort);
+  const changeSort = (sortObj) => {
+    setSortData(sortObj);
     setCurrentPage(1);
   };
 
