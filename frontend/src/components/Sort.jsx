@@ -19,7 +19,7 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
     changeSort({ ...sortData, limit: Number(event.target.value) });
 
   return (
-    <div className="bg-sort">
+    <ul className="bg-sort">
       <li>
         <SortIcon
           name="Modelo"
@@ -61,7 +61,7 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
           <option value="24">24</option>
         </select>
       </li>
-    </div>
+    </ul>
   );
 }
 
