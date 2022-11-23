@@ -92,3 +92,4 @@ Artículos informativos elaborados por el autor relacionados con esta práctica:
 
 - [Usando populate con paginate y filtrando los resultados](https://javguerra.github.io/2022-10-29-populate-paginate-fitrado/)  
 - [Generar enlaces dinámicos de imágenes almacenadas en MongoDB](https://javguerra.github.io/2022-11-06-rutas-dinamicas-imagenes-mongodb/)  
+- [Ordenando resultados en React](https://javguerra.github.io/2022-11-23-ordenacion-react/)  
