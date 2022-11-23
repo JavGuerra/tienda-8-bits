@@ -267,6 +267,7 @@ h2  {
 .bg-sort {
     color: black;
     justify-content: space-evenly;
+    margin: 0;
     padding: 0 5px;
     font-size: small;
 }
