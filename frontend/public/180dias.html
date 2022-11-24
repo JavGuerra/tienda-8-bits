@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>180 días</title>
+    <style>
+        body {
+            margin: 5em auto;
+            max-width: 50em;
+            line-height: 1.5;
+            padding: 1em;
+            color: #566b78;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 2em;
+        }
+        p {
+            margin: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="64" height="64" viewBox="0 0 33.866667 33.866667" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <g id="layer1" transform="translate(-93.711113,-101.36288)">
+            <path id="path30" style="fill:#e22b23;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0529167"
+                d="M 123.34445,101.36288 H 97.944443 c -2.337855,0 -4.23333,1.89548 -4.23333,4.23335 v 25.39999 c 0,2.33784 1.895475,4.23333 4.23333,4.23333 v -17.46249 h 25.400007 v 17.46249 c 2.33785,0 4.23333,-1.89549 4.23333,-4.23333 v -25.39999 c 0,-2.33787 -1.89548,-4.23335 -4.23333,-4.23335 z m -17.99168,33.86667 h 10.58334 v -11.64166 h -10.58334 v 11.64166" />
+            <path id="path34" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0529167"
+                d="m 123.34445,117.76706 v 17.46249 h -7.40834 v -11.64166 h -10.58334 v 11.64166 h -7.408327 v -17.46249 h 25.400007" />
+        </g>
+    </svg>
+
+    <header>
+        <h1><small>Compromiso de empleabilidad</small><br/>180 días</h1>
+    </header>
+
+    <main>
+        <p title="Decoración superior" aria-label="Texto decorativo">(¯`·._.··¸.-~*´¨¯¨`*·~-.,-( ⌛ )-,.-~*´¨¯¨`*·~-.¸··._.·´¯)</p>
+        <div id="ohMy">No funciona: Necesitas tener JavaScript activado.</div>
+        <p id="status" title="Decoración inferior" aria-label="Texto decorativo">¸¸♬·¯·♩¸¸♪·¯·♫¸¸{ Estamos trabajando en ello... }¸¸♬·¯·♩¸¸♪·¯·♫¸¸</p>
+    </main>
+
+    <script>
+        const ohMy = document.getElementById("ohMy");
+        const status = document.getElementById("status");
+
+        // Fechas para el conteo...
+        const initialDate = new Date("Nov 18, 2022 18:00:00").getTime();
+        const endDate = null;
+        const hours = (1000 * 60 * 60);
+
+        // Descripciones aria
+        ohMy.setAttribute("role", "timer");
+        ohMy.setAttribute("aria-live", "off");
+        ohMy.setAttribute("aria-atomic", "false");
+        ohMy.setAttribute("aria-relevant", "text");
+
+        function showDate() {
+            if (endDate === null) {
+                const now = new Date().getTime();
+                const distance = now - initialDate;
+
+                const theDays = Math.floor(distance / (hours * 24));
+                const theHours = Math.floor((distance % (hours * 24)) / hours);
+                const theMinutes = Math.floor((distance % hours) / (1000 * 60));
+
+                ohMy.innerHTML = "<h2>Han pasado " + theDays + " días, " + theHours + " horas, y " + theMinutes + " minutos<br/>desde que terminó el Bootcamp.</h2>";
+            
+            } else {
+                clearInterval(x);
+                ohMy.innerHTML = "<h2>Encontré trabajo el " + endDate + "</h2>";
+                status.innerHTML = "¸¸♬·¯·♩¸¸♪·¯·♫¸¸¡Reto superado!¸¸♬·¯·♩¸¸♪·¯·♫¸¸";
+            }
+        }
+
+        // Inicio
+        showDate();
+
+        // Actualizar cada 60 segundos
+        const x = setInterval(function () { showDate(); }, 60000);
+    </script>
+</body>
+
+</html>
