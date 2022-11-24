@@ -19,7 +19,15 @@
             margin-bottom: 2em;
         }
         p {
-            margin: 2em;
+            margin: 3em;
+        }
+        .asciiArt {
+            font-size: xx-small;
+        }
+        @media (min-width: 993px) {
+            .asciiArt {
+                font-size: medium;
+            }  
         }
     </style>
 </head>
@@ -39,9 +47,9 @@
     </header>
 
     <main>
-        <p title="Decoración superior" aria-label="Texto decorativo">(¯`·._.··¸.-~*´¨¯¨`*·~---··.,.··---« ( ⌛ ) »---··.,.··---~*´¨¯¨`*·~-.¸··._.·´¯)</p>
+        <p class="asciiArt" title="Decoración superior" aria-label="Texto decorativo">(¯`·._.··¸.-~*´¨¯¨`*·~---··.,.··---« ( ⌛ ) »---··.,.··---~*´¨¯¨`*·~-.¸··._.·´¯)</p>
         <p id="ohMy">No funciona: Necesitas tener JavaScript activado.</p>
-        <p id="status" title="Decoración inferior" aria-label="Texto decorativo">¸¸♬·¯·♩¸¸♪·¯·♫¸¸{ Estamos trabajando en ello... }¸¸♬·¯·♩¸¸♪·¯·♫¸¸</p>
+        <p id="status" class="asciiArt" title="Decoración inferior" aria-label="Texto decorativo">¸¸♬·¯·♩¸¸♪·¯·♫¸¸{ Estamos trabajando en ello... }¸¸♬·¯·♩¸¸♪·¯·♫¸¸</p>
     </main>
 
     <script>
