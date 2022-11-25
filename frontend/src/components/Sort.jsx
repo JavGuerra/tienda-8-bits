@@ -9,8 +9,8 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
     setCurrentPage(1);
   };
 
-  const handleIcon = (sortName, order) =>
-    changeSort({ [sortName]: order ? -order : 1, relevant, limit });
+  const handleIcon = (sortName, order) => () =>
+    changeSort({ [sortName]: order ? -order : 1, relevant, limit }); // Función
 
   const handleCheckBox = () =>
     changeSort({ ...sortData, relevant: !relevant });
@@ -23,25 +23,22 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
       <li>
         <SortIcon
           name="Modelo"
-          sortName="sortmodel"
           order={sortmodel}
-          handleIcon={handleIcon}
+          handleIcon={handleIcon("sortmodel", sortmodel)}
         />
       </li>
       <li>
         <SortIcon
           name="Precio"
-          sortName="sortprice"
           order={sortprice}
-          handleIcon={handleIcon}
+          handleIcon={handleIcon("sortprice", sortprice)}
         />
       </li>
       <li>
         <SortIcon
           name="Año"
-          sortName="sortyear"
           order={sortyear}
-          handleIcon={handleIcon}
+          handleIcon={handleIcon("sortyear", sortyear)}
         />
       </li>
       <li>
