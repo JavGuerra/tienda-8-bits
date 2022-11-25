@@ -46,6 +46,7 @@ const Info = () => {
             avatares del tiempo, y por su escasez, en pequeñas joyas difíciles
             de encontrar, lo que aumenta su valor en el mercado, especialmente
             de las primeras máquinas de 8 bits.</p>
+            
           <p>Esta tienda es un ejemplo de ello.</p>
         </div>
 
