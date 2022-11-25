@@ -20,6 +20,7 @@ const Layout = () => {
               </svg> Catálogo
             </Link>
           </li>
+
           <li>
             <Link to="/info">
               <svg xmlns="http://www.w3.org/2000/svg" className="icon" fill="none"
@@ -29,6 +30,7 @@ const Layout = () => {
               </svg> Info
             </Link>
           </li>
+
           <li>
             <Link to="/contact">
               <svg xmlns="http://www.w3.org/2000/svg" className="icon" fill="none"
