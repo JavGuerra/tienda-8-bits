@@ -33,22 +33,16 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
         Año <SortIcon order={sortyear} />
       </li>
 
-      <li>
-        <label>
-          <input type="checkbox"
-          defaultChecked={relevant} onChange={handleCheckBox} />
-          &nbsp;Relevancia
-        </label> 
+      <li onChange={handleCheckBox}>
+        <input type="checkbox" id="checkbox" defaultChecked={relevant} />
+        <label htmlFor="checkbox">&nbsp;Relevancia</label>
       </li>
 
       <li>
         <label htmlFor="cardsNumber" className="sr">Tarjetas: </label>
         <select id="cardsNumber" value={limit} onChange={handleSelect} >
-          <option value="6">6</option>
-          <option value="8">8</option>
-          <option value="12">12</option>
-          <option value="16">16</option>
-          <option value="24">24</option>
+          {[6, 8, 12, 16, 24].map(value =>
+            <option key={value} value={value}>{value}</option>)}
         </select>
       </li>
       
