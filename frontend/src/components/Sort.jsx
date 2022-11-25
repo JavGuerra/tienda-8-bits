@@ -20,27 +20,19 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
 
   return (
     <ul className="bg-sort">
-      <li>
-        <SortIcon
-          name="Modelo"
-          order={sortmodel}
-          handleIcon={handleIcon("sortmodel", sortmodel)}
-        />
+
+      <li onClick={handleIcon("sortmodel", sortmodel)}>
+        <SortIcon name="Modelo" order={sortmodel} />
       </li>
-      <li>
-        <SortIcon
-          name="Precio"
-          order={sortprice}
-          handleIcon={handleIcon("sortprice", sortprice)}
-        />
+
+      <li onClick={handleIcon("sortprice", sortprice)}>
+        <SortIcon name="Precio" order={sortprice} />
       </li>
-      <li>
-        <SortIcon
-          name="Año"
-          order={sortyear}
-          handleIcon={handleIcon("sortyear", sortyear)}
-        />
+
+      <li onClick={handleIcon("sortyear", sortyear)}>
+        <SortIcon name="Año" order={sortyear} />
       </li>
+
       <li>
         <label>
           <input type="checkbox"
@@ -48,6 +40,7 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
           &nbsp;Relevancia
         </label> 
       </li>
+
       <li>
         <label htmlFor="cardsNumber" className="sr">Tarjetas: </label>
         <select id="cardsNumber" value={limit} onChange={handleSelect} >
@@ -58,6 +51,7 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
           <option value="24">24</option>
         </select>
       </li>
+      
     </ul>
   );
 }
