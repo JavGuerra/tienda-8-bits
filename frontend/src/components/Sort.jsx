@@ -22,15 +22,15 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
     <ul className="bg-sort">
 
       <li className="sort-select" onClick={handleIcon("sortmodel", sortmodel)}>
-        Modelo&nbsp;<SortIcon order={sortmodel} />
+        Modelo <SortIcon order={sortmodel} />
       </li>
 
       <li className="sort-select" onClick={handleIcon("sortprice", sortprice)}>
-        Precio&nbsp;<SortIcon order={sortprice} />
+        Precio <SortIcon order={sortprice} />
       </li>
 
       <li className="sort-select" onClick={handleIcon("sortyear", sortyear)}>
-        Año&nbsp;<SortIcon order={sortyear} />
+        Año <SortIcon order={sortyear} />
       </li>
 
       <li>
