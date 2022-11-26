@@ -1,0 +1,1 @@
+export default ({children, bg}) => <div className={"frame "+bg}>{children}</div>;

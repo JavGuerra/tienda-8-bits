@@ -1,8 +1,9 @@
+import Frame from "../components/Frame";
 import Title from "../components/Title";
 
 const Info = () => (
   <>
-  <div className="frame bg-info"></div>
+  <Frame bg="bg-info" />
 
   <header className="container">
     <Title title={"Info"} />

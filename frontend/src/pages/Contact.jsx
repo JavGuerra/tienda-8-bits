@@ -1,8 +1,9 @@
+import Frame from "../components/Frame";
 import Title from "../components/Title";
 
 const Contact = () => (
   <>
-  <div className="frame bg-contact"></div>
+  <Frame bg="bg-contact" />
 
   <header className="container">
     <Title title={"Contactar"} />

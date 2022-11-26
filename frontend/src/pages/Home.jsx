@@ -3,9 +3,10 @@ import axios from "axios";
 import useConfig from "../hooks/useConfig";
 // Components
 import Title from "../components/Title";
+import Frame from "../components/Frame";
 import Form from "../components/Form";
-import Sort from "../components/Sort";
 import Logo from "../components/Logo";
+import Sort from "../components/Sort";
 import Result from "../components/Result";
 import Paginator from "../components/Paginator";
 import Zone from "../components/Zone";
@@ -84,9 +85,9 @@ const Home = () => {
 
   return (
     <>
-    <div className="frame bg-home">
-      <div className="bg-container">
-        
+    <Frame bg="bg-home">
+      <div className="bg-container"> 
+
         <Logo url={logo} alt={brandTxt} />
 
         <div className="bg-controls">
@@ -103,9 +104,8 @@ const Home = () => {
             setCurrentPage={setCurrentPage}
           />
         </div>
-        
       </div>
-    </div>
+    </Frame>
 
     <div>
       <header className="container">
