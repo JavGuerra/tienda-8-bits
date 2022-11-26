@@ -20,9 +20,6 @@ const Home = () => {
   const sort = { sortmodel: 1, relevant: false, limit: 12 };
   const sendBtnRef = useRef();
 
-  const next = () => setCurrentPage(prev => prev === finalPage ? prev : ++prev);
-  const prev = () => setCurrentPage(prev => prev === 1 ? prev : --prev);
-
   const [searchData, setSearchData] = useState({});
   const [sortData, setSortData] = useState(sort);
   const [filteredData, setData] = useState(null);
@@ -33,8 +30,10 @@ const Home = () => {
   const [finalPage, setFinalPage] = useState(1);
   const [totalDocs, setTotalDocs] = useState(null);
 
+  const next = () => setCurrentPage(prev => prev === finalPage ? prev : ++prev);
+  const prev = () => setCurrentPage(prev => prev === 1 ? prev : --prev);
 
-  useEffect(() => {
+  const homeEffect = () => {
     const { model, brand, price, year } = searchData;
     const { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
 
@@ -77,9 +76,9 @@ const Home = () => {
 
     setSpin(false);
     inactiveBtn(sendBtnRef.current, false);
+  }; // end homeEffect
 
-  }, [searchData, sortData, currentPage]); // end useEffect
-
+  useEffect(homeEffect, [searchData, sortData, currentPage]);
 
   return (
     <>
