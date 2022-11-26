@@ -13,8 +13,8 @@ body {
 
 .container {
     margin: 0 auto;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
     max-width: 100%;
 }
 
@@ -436,6 +436,8 @@ footer a:hover {
 
     .container {
         margin: 0 auto;
+        padding-left: 1em;
+        padding-right: 1em;
         max-width: 67em;
     }
 
