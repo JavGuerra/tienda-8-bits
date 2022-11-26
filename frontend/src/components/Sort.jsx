@@ -35,7 +35,7 @@ const Sort = ({sortData, setSortData, setCurrentPage}) => {
 
       <li onChange={handleCheckBox}>
         <input type="checkbox" id="checkbox" defaultChecked={relevant} />
-        <label htmlFor="checkbox">&nbsp;Relevancia</label>
+        <label htmlFor="checkbox">&nbsp;Destacado</label>
       </li>
 
       <li>
