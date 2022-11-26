@@ -1,22 +1,24 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import useConfig from "../hooks/useConfig";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+// Components
+import Title from "../components/Title";
 import Form from "../components/Form";
 import Sort from "../components/Sort";
 import Logo from "../components/Logo";
 import Result from "../components/Result";
 import Paginator from "../components/Paginator";
 import Zone from "../components/Zone";
+// My modules
 import inactiveBtn from "../modules/inactiveBtn";
-import setSpin from "../modules/setSpin";
 import clearString from "../modules/clearString";
+import setSpin from "../modules/setSpin";
 import readStatus from "../modules/readStatus";
 
 const Home = () => {
 
-  const { footer, url } = useConfig();
+  const { url } = useConfig();
+
   const sort = { sortmodel: 1, relevant: false, limit: 12 };
   const sendBtnRef = useRef();
 
@@ -82,60 +84,56 @@ const Home = () => {
 
   return (
     <>
-      <div className="frame bg-home">
-        <div className="bg-container">
-          
-          <Logo url={logo} alt={brandTxt} />
-
-          <div className="bg-controls">
-            <Form
-              url={url}
-              setSearchData={setSearchData}
-              setCurrentPage={setCurrentPage}
-              sendBtnRef={sendBtnRef}
-            />
-
-            <Sort
-              sortData={sortData}
-              setSortData={setSortData}
-              setCurrentPage={setCurrentPage}
-            />
-          </div>
-          
-        </div>
-      </div>
-
-      <div>
-        <header className="container">
-          <Header title={"Catálogo"} />
-        </header>
-
-        <main>
-          <section className="container">
-            {dataStatus === 0 && <Result filteredData={filteredData} />}
-            {dataStatus !== 0 &&
-              <h3 className="noResult">{readStatus(dataStatus)}</h3>}
-          </section>
-
-          <section>
-            {dataStatus === 0 &&
-              <Paginator
-                totalDocs={totalDocs}
-                currentPage={currentPage}
-                finalPage={finalPage}
-                limit={sortData.limit}
-                next={next}
-                prev={prev}
-              />}
-          </section>
-        </main>
-
-        <footer className="container">
-          <Footer footer={footer} />
-        </footer>
+    <div className="frame bg-home">
+      <div className="bg-container">
         
-        <Zone />
+        <Logo url={logo} alt={brandTxt} />
+
+        <div className="bg-controls">
+          <Form
+            url={url}
+            setSearchData={setSearchData}
+            setCurrentPage={setCurrentPage}
+            sendBtnRef={sendBtnRef}
+          />
+
+          <Sort
+            sortData={sortData}
+            setSortData={setSortData}
+            setCurrentPage={setCurrentPage}
+          />
+        </div>
+        
       </div>
+    </div>
+
+    <div>
+      <header className="container">
+        <Title title={"Catálogo"} />
+      </header>
+
+      <main>
+        <section className="container">
+          {dataStatus === 0 && <Result filteredData={filteredData} />}
+          {dataStatus !== 0 &&
+            <h3 className="noResult">{readStatus(dataStatus)}</h3>}
+        </section>
+
+        <section>
+          {dataStatus === 0 &&
+            <Paginator
+              totalDocs={totalDocs}
+              currentPage={currentPage}
+              finalPage={finalPage}
+              limit={sortData.limit}
+              next={next}
+              prev={prev}
+            />}
+        </section>
+      </main>
+      
+      <Zone />
+    </div>
     </>
   );
 

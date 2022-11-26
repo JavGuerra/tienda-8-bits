@@ -1,9 +1,11 @@
 import { Outlet, Link } from "react-router-dom";
 import useConfig from "../hooks/useConfig";
+import Head from "../components/Head";
+import Footer from "../components/Footer";
 
 const Layout = () => {
 
-  const { title } = useConfig();
+  const { title, footer } = useConfig();
 
   return (
     <>
@@ -43,11 +45,16 @@ const Layout = () => {
         </ul>
       </nav>
 
-      <h1>{title}</h1>
-
+      <header>
+        <Head title={title} />
+      </header>
     </div>
 
     <Outlet />
+
+    <footer className="container">
+      <Footer footer={footer} />
+    </footer>
     </>
   );
 };
