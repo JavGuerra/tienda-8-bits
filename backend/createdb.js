@@ -1,4 +1,6 @@
 // Script para llenar y relacionar las colecciones
+// La colección products relaciona el campo manufacturer con el campo code
+// de la colección manufacturers para llevar a cabo la agregación.
 // Usar con: node createdb
 // Nota: La BBDD y las colecciones deben estar creadas previamente
 
