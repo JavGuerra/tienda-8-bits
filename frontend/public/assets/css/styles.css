@@ -363,13 +363,17 @@ h2  {
     color: #566b78;
 }
 
-#paginator a {
-    font-size: large;
+#page-numbers {
+    font-size: larger;
+}
+
+#page-numbers a {
+    font-size: medium;
     padding: 4px;
     color: Purple;
 }
 
-#paginator a:hover {
+#page-numbers a:hover {
     cursor: pointer;
     background-color: lightgray;
     border-radius: 10px;
