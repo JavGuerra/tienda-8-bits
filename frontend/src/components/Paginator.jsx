@@ -1,6 +1,9 @@
 const Paginator =(
-  {totalDocs, currentPage, setCurrentPage, finalPage, limit, next, prev} ) => {
+  {totalDocs, currentPage, setCurrentPage, finalPage, limit} ) => {
   
+  const next = () => setCurrentPage(prev => prev === finalPage ? prev : ++prev);
+  const prev = () => setCurrentPage(prev => prev === 1 ? prev : --prev);
+
   const first = (currentPage -1) * limit + 1;
   const rest = currentPage === finalPage
     ? (totalDocs % limit) ? (totalDocs % limit) : limit

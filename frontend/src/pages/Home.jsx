@@ -33,9 +33,6 @@ const Home = () => {
   const [finalPage, setFinalPage] = useState(1);
   const [totalDocs, setTotalDocs] = useState(null);
 
-  const next = () => setCurrentPage(prev => prev === finalPage ? prev : ++prev);
-  const prev = () => setCurrentPage(prev => prev === 1 ? prev : --prev);
-
   const homeEffect = () => {
     const { model, brand, price, year } = searchData;
     const { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
@@ -128,8 +125,6 @@ const Home = () => {
               setCurrentPage={setCurrentPage}
               finalPage={finalPage}
               limit={sortData.limit}
-              next={next}
-              prev={prev}
             />}
         </section>
       </main>
