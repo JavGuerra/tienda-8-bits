@@ -35,9 +35,7 @@ const Form = forwardRef(({ url, setSearchData, setCurrentPage }, sendBtnRef) => 
         <div>
           <label htmlFor="model" className="sr">Modelo:</label>
           <input type="text" id="model" placeholder="modelo"
-            {...register('model', {
-                pattern: chars
-            })} autoFocus="autofocus" />
+            {...register('model', { pattern: chars })} autoFocus="autofocus" />
         </div>
 
         <div>
@@ -56,18 +54,13 @@ const Form = forwardRef(({ url, setSearchData, setCurrentPage }, sendBtnRef) => 
         <div>
           <label htmlFor="price" className="sr">Precio:</label>
           <input type="number" id="price" placeholder="precio" min="0"
-            {...register('price', {
-                min: 1
-            })} />
+            {...register('price', { min: 1 })} />
         </div>
 
         <div>
           <label htmlFor="year" className="sr">Año:</label>
           <input type="number" id="year" placeholder="año" min="0"
-            {...register('year', {
-                min: 1970,
-                max: 1990
-            })} />
+            {...register('year', { min: 1970, max: 1990 })} />
         </div>
       </div>
 
@@ -76,10 +69,8 @@ const Form = forwardRef(({ url, setSearchData, setCurrentPage }, sendBtnRef) => 
         <span className="errors">
           {errors.model?.type === 'pattern' &&
             <span>&nbsp;(&nbsp;!&nbsp;)&nbsp;Modelo&nbsp; </span>}
-          {errors.price &&
-            <span>&nbsp;(&nbsp;!&nbsp;)&nbsp;Precio&nbsp; </span>}
-          {errors.year &&
-            <span>&nbsp;(&nbsp;!&nbsp;)&nbsp;Año&nbsp; </span>}
+          {errors.price && <span>&nbsp;(&nbsp;!&nbsp;)&nbsp;Precio&nbsp; </span>}
+          {errors.year  && <span>&nbsp;(&nbsp;!&nbsp;)&nbsp;Año&nbsp; </span>}
         </span>
 
         <div>
