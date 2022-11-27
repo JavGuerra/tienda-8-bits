@@ -363,6 +363,18 @@ h2  {
     color: #566b78;
 }
 
+#paginator a {
+    font-size: large;
+    padding: 4px;
+    color: Purple;
+}
+
+#paginator a:hover {
+    cursor: pointer;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
 footer p {
     font-size: small;
 }

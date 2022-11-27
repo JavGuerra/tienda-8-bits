@@ -125,6 +125,7 @@ const Home = () => {
             <Paginator
               totalDocs={totalDocs}
               currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
               finalPage={finalPage}
               limit={sortData.limit}
               next={next}

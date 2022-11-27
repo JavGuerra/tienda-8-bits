@@ -1,10 +1,21 @@
-const Paginator = ({totalDocs, currentPage, finalPage, limit, next, prev}) => {
+const Paginator =(
+  {totalDocs, currentPage, setCurrentPage, finalPage, limit, next, prev} ) => {
   
   const first = (currentPage -1) * limit + 1;
   const rest = currentPage === finalPage
     ? (totalDocs % limit) ? (totalDocs % limit) : limit
     : limit;
   const last = first - 1 + rest;
+
+  let pageNumbers = [];
+  for (let i = 1; i <= finalPage; i++) {
+    pageNumbers.push(
+      <span key={i}>
+        {i !== currentPage ? <a onClick={() => setCurrentPage(i)}>{i}</a> : i}
+        {i !== finalPage ? ' ' : ''}
+      </span>
+    );
+  }
   
   return (
     <div id="paginator">
@@ -32,8 +43,7 @@ const Paginator = ({totalDocs, currentPage, finalPage, limit, next, prev}) => {
             </svg> Anterior
           </button>
 
-          &nbsp;&nbsp;<small>Pág.</small>&nbsp;<strong>{currentPage}</strong>
-          &nbsp;<small>de</small>&nbsp;<strong>{finalPage}</strong>&nbsp;&nbsp;
+          &nbsp;&nbsp;{pageNumbers}&nbsp;&nbsp;
 
           <button disabled={currentPage === finalPage} onClick={() => next()}>
             <svg xmlns="http://www.w3.org/2000/svg" className="icon" fill="none"
