@@ -1,10 +1,3 @@
-const Footer = ({footer}) => (
-  <p>
-    <small>🎯&nbsp;&nbsp;
-      <a href="https://javguerra.github.io/" target="_blank">{footer}</a>
-    </small>
-  </p>
+export default ({footer, link}) => (
+  <p>🎯&nbsp;&nbsp;<a href={link} target="_blank">{footer}</a></p>
 );
-
-
-export default Footer;

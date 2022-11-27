@@ -363,6 +363,10 @@ h2  {
     color: #566b78;
 }
 
+footer p {
+    font-size: small;
+}
+
 footer a {
     text-decoration: none;
     color: #333;

@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const Layout = () => {
 
-  const { title, footer } = useConfig();
+  const { title, footer, link } = useConfig();
 
   return (
     <>
@@ -53,7 +53,7 @@ const Layout = () => {
     <Outlet />
 
     <footer className="container">
-      <Footer footer={footer} />
+      <Footer footer={footer} link={link} />
     </footer>
     </>
   );
