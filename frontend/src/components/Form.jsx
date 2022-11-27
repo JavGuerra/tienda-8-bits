@@ -91,7 +91,7 @@ const Form = forwardRef(({ url, setSearchData, setCurrentPage }, sendBtnRef) => 
           </button>
           <button ref={sendBtnRef} id="send" type="send">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon" fill="none"
-              viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
             </svg>Enviar
           </button>
