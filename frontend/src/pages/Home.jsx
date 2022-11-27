@@ -68,7 +68,8 @@ const Home = () => {
           axios.get(url + 'manufacturers/' + brand)
             .then(response => {
               setLogo(response.data.result[0].logo);
-              setBrand("Logo de " + response.data.result[0].brand);})
+              setBrand("Logo de " + response.data.result[0].brand);
+            })
             .catch(error => console.log('Error: ', error.message));
         }
       })
