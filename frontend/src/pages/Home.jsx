@@ -60,7 +60,6 @@ const Home = () => {
         setCurrentPage(response.data.result.page);
         setFinalPage(response.data.result.totalPages);
         setTotalDocs(response.data.result.totalDocs);
-
         if (clearString(brand)) {
           // Evito una consulta extra a la API, ya que los datos están agregados
           // De lo contrario, debería consultar: url + 'manufacturers/' + brand
