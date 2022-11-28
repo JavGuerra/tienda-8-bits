@@ -13,7 +13,7 @@ const Paginator =(
   let pageNumbers = [];
   for (let i = 1; i <= finalPage; i++) {
     pageNumbers.push(
-      <span key={i} id="page-numbers">
+      <span key={i} className="page-numbers">
         {i !== currentPage ? <a onClick={() => setCurrentPage(i)}>{i}</a> : i}
         {i !== finalPage ? ' ' : ''}
       </span>
