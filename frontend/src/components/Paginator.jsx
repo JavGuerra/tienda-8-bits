@@ -1,4 +1,4 @@
-const Paginator =(
+const Paginator = (
   {totalDocs, currentPage, setCurrentPage, finalPage, limit} ) => {
   
   const next = () => setCurrentPage(prev => prev === finalPage ? prev : ++prev);
