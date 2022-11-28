@@ -1,5 +1,5 @@
 /**
- * Limpia cadena de texto p devuelve cadena vacía
+ * Limpia cadena de texto o devuelve cadena vacía
  * @param {String} data a limpiar 
  * @returns String
  */
