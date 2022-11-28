@@ -62,12 +62,10 @@ const Home = () => {
         setTotalDocs(response.data.result.totalDocs);
 
         if (clearString(brand)) {
-          axios.get(url + 'manufacturers/' + brand)
-            .then(response => {
-              setLogo(response.data.result[0].logo);
-              setBrand("Logo de " + response.data.result[0].brand);
-            })
-            .catch(error => console.log('Error: ', error.message));
+          // Evito una consulta extra a la API, ya que los datos están agregados
+          // De lo contrario, debería consultar: url + 'manufacturers/' + brand
+          setLogo(response.data.result.docs[0].manufacturer.ref.logo);
+          setBrand(response.data.result.docs[0].manufacturer.brand);
         }
       })
       .catch((error) => {
