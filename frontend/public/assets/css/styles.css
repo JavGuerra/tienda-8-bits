@@ -99,8 +99,9 @@ h2  {
 }
 
 .card-image {
+    background-image: url('../img/bg-img.jpg');
     width: 245px;
-    height: auto;
+    height: 184px;
     transition: 0.3s ease;
     transition-delay: 1s;
     cursor: zoom-in;
