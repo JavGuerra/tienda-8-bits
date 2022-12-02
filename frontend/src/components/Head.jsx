@@ -1,3 +1,3 @@
-import React from 'react';
+import { memo } from 'react';
 
-export default React.memo( ({title}) => <h1>{title}</h1> );
+export default memo( ({title}) => <h1>{title}</h1> );

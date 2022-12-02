@@ -1,5 +1,5 @@
-import React from 'react';
+import { memo } from 'react';
 
-export default React.memo( ({children, bg}) =>
+export default memo( ({children, bg}) =>
     <div className={"frame "+bg}>{children}</div>
 );
