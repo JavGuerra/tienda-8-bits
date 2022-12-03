@@ -4,20 +4,14 @@ import { getFilteredProducts, getProductByModel }
 const stringToBoolean = data => data === "true";
 
 const insertRoutes = data => {
-    const url = process.env.HOST + ':' + process.env.PORT + '/';
-    data.docs.forEach(element => {
+    const url  = process.env.HOST + ':' + process.env.PORT + '/';
+    let result = (data.docs) ? data.docs : data;
+    result.forEach(element => {
         element.photo = url + 'photo/' + element.photo;
         if (!element.manufacturer.ref.logo.includes(url)) 
             element.manufacturer.ref.logo = url + 'logo/' + element.manufacturer.ref.logo;
-    });
-    return data;
-}
-
-const insertRoute = data => {
-    const url = process.env.HOST + ':' + process.env.PORT + '/';
-    data.manufacturer.ref.logo = url + 'logo/' + data.manufacturer.ref.logo;
-    data.photo = url + 'photo/' + data.photo;
-    return data;
+    })
+    return result;
 }
 
 const v1GetFilteredProducts = async (req, res) => {
@@ -63,7 +57,7 @@ const v1GetProductByModel = async (req, res) => {
     const populate = 'manufacturer.ref';
     let result = await getProductByModel(filter, populate);
     const response_code = (result !== null) ? 0 : 1;
-    if (response_code === 0) result = insertRoute(result);
+    if (response_code === 0) result = insertRoutes([result]);
     res.json({response_code, result});
 }
 
