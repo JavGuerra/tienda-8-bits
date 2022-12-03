@@ -1,4 +1,5 @@
-import getFilteredProducts from "../../services/productService.js";
+import { getFilteredProducts, getProductByModel }
+    from "../../services/productService.js";
 
 const stringToBoolean = data => data === "true";
 
@@ -9,6 +10,13 @@ const insertRoutes = data => {
         if (!element.manufacturer.ref.logo.includes(url)) 
             element.manufacturer.ref.logo = url + 'logo/' + element.manufacturer.ref.logo;
     });
+    return data;
+}
+
+const insertRoute = data => {
+    const url = process.env.HOST + ':' + process.env.PORT + '/';
+    data.manufacturer.ref.logo = url + 'logo/' + data.manufacturer.ref.logo;
+    data.photo = url + 'photo/' + data.photo;
     return data;
 }
 
@@ -39,7 +47,7 @@ const v1GetFilteredProducts = async (req, res) => {
     if (sortprice) sort.price = Number(sortprice);
     if (sortyear ) sort.year  = Number(sortyear );
     
-    const populate = { path: "manufacturer.ref", select: "-_id" };
+    const populate = { path: "manufacturer.ref" };
 
     const options  = { sort, populate, page, limit };
 
@@ -49,4 +57,14 @@ const v1GetFilteredProducts = async (req, res) => {
     res.json({ response_code, result });
 }
 
-export default v1GetFilteredProducts;
+const v1GetProductByModel = async (req, res) => {
+    const model  = req.params.model.trim().toUpperCase();
+    const filter = { model: { $regex: `.*${model}.*` } };
+    const populate = 'manufacturer.ref';
+    let result = await getProductByModel(filter, populate);
+    const response_code = (result !== null) ? 0 : 1;
+    if (response_code === 0) result = insertRoute(result);
+    res.json({response_code, result});
+}
+
+export { v1GetFilteredProducts, v1GetProductByModel };
