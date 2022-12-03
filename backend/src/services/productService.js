@@ -1,11 +1,13 @@
-import Product from '../schemas/ProductSchema.js';
+import Product from "../schemas/ProductSchema.js";
 
-const getFilteredProducts = async (filter, options)  => {
-    return await Product.paginate(filter, { ...options, select: '-_id' });
-}
+const getFilteredProducts = async (filter, options) => {
+    return await Product.paginate(filter, options);
+};
 
-const getProductByModel = async (filter, populate) => {
-    return await Product.findOne(filter, {_id: 0}).populate(populate, '-_id').exec();
-}
+const getProductByModel = async (
+    filter, fieldsFilter, populate, fieldsPopulate ) => {
+    return await Product.findOne(filter, fieldsFilter)
+        .populate(populate, fieldsPopulate).exec();
+};
 
 export { getFilteredProducts, getProductByModel };

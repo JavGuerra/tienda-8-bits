@@ -42,9 +42,9 @@ const v1GetFilteredProducts = async (req, res) => {
     if (sortprice) sort.price = Number(sortprice);
     if (sortyear ) sort.year  = Number(sortyear );
     
-    const populate = { path: "manufacturer.ref" };
+    const populate = { path: "manufacturer.ref", select: "-_id" };
 
-    const options  = { sort, populate, page, limit };
+    const options  = { sort, populate, page, limit, select: "-_id" };
 
     let result = await getFilteredProducts( filter, options );
     const response_code = result.docs.length ? 0 : 1;
@@ -55,8 +55,8 @@ const v1GetFilteredProducts = async (req, res) => {
 const v1GetProductByModel = async (req, res) => {
     const model  = req.params.model.trim().toUpperCase();
     const filter = { model: { $regex: `.*${model}.*` } };
-    const populate = 'manufacturer.ref';
-    let result = await getProductByModel(filter, populate);
+    let result =
+        await getProductByModel(filter, {_id: 0}, "manufacturer.ref", "-_id");
     const response_code = (result !== null) ? 0 : 1;
     if (response_code === 0) result = insertRoutes([result]);
     res.json({response_code, result});
