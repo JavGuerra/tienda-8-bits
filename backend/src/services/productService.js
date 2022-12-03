@@ -1,7 +1,7 @@
 import Product from '../schemas/ProductSchema.js';
 
 const getFilteredProducts = async (filter, options)  => {
-    return await Product.paginate(filter, { ...options, select: "-_id" });
+    return await Product.paginate(filter, { ...options, select: '-_id' });
 }
 
 const getProductByModel = async (filter, populate) => {
