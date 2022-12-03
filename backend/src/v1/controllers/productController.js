@@ -11,7 +11,8 @@ const insertRoutes = data => {
         if (!element.manufacturer.ref.logo.includes(url)) 
             element.manufacturer.ref.logo = url + 'logo/' + element.manufacturer.ref.logo;
     })
-    return result;
+    if (data.docs) data.docs = result; else data = result;
+    return data;
 }
 
 const v1GetFilteredProducts = async (req, res) => {
