@@ -6,7 +6,7 @@ const Info = () => (
   <Frame bg="bg-info" />
 
   <header className="container">
-    <Title title={"Info"} />
+    <Title title="Info" />
   </header>
 
   <main className="container">

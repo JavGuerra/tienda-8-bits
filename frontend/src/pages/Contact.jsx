@@ -6,7 +6,7 @@ const Contact = () => (
   <Frame bg="bg-contact" />
 
   <header className="container">
-    <Title title={"Contactar"} />
+    <Title title="Contactar" />
   </header>
 
   <main className="container">

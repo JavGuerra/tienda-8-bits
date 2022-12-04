@@ -100,7 +100,7 @@ const Home = () => {
 
     <div>
       <header className="container">
-        <Title title={"Catálogo"} />
+        <Title title="Catálogo" />
       </header>
 
       <main>
