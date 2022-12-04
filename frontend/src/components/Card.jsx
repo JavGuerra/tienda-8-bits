@@ -1,7 +1,7 @@
 const Card = ({info}) => (
   <div className="card">
     <img loading="lazy" className="card-image"
-    src={info.photo} alt={"Foto del " + info.model} />
+      src={info.photo} alt={"Foto del " + info.model} />
 
     <div className="card-content">
       <h3><a href={info.link} target="_blank">{info.model}</a> 

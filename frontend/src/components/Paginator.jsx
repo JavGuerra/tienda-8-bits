@@ -22,14 +22,13 @@ const Paginator = (
   
   return (
     <div id="paginator">
-      {finalPage === 1 &&
+      {finalPage === 1
+        ?
         <span>
           &nbsp;{totalDocs}&nbsp;
           <small>producto{totalDocs > 1 ? 's' : ''}</small>&nbsp;
         </span>
-      }
-
-      {finalPage > 1 &&
+        :
         <>
         <span>&nbsp;
           <small>Productos</small>&nbsp;{first}&nbsp;
