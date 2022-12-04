@@ -4,7 +4,7 @@ import Title from "../components/Title";
 const NoPage = () => (
   <>
   <header className="container">
-    <Title title={"Error 404"} />
+    <Title title="Error 404" />
   </header>
 
   <main className="container">

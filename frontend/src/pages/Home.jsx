@@ -105,9 +105,9 @@ const Home = () => {
 
       <main>
         <section className="container">
-          {dataStatus === 0 && <Result filteredData={filteredData} />}
-          {dataStatus !== 0 &&
-            <h3 className="noResult">{readStatus(dataStatus)}</h3>}
+          {dataStatus === 0
+            ? <Result filteredData={filteredData} />
+            : <h3 className="noResult">{readStatus(dataStatus)}</h3>}
         </section>
 
         <section>

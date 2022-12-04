@@ -29,8 +29,10 @@ const Info = () => (
 
       <figure>
         <img src="assets/img/trinidad.jpg" alt="La trinidad" />
-        <figcaption>«La trinidad». De izquierda a derecha: Tandy TRS-80, 
-          Apple ][, Commodore Pet, y sus periféricos. Foto propia.</figcaption>
+        <figcaption>
+          «La trinidad». De izquierda a derecha: Tandy TRS-80, 
+          Apple ][, Commodore Pet, y sus periféricos. Foto propia.
+        </figcaption>
       </figure> 
 
       <p>Ambos fenómenos se complementan. Desde entonces, más personas usan
