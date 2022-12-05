@@ -29,6 +29,7 @@ const Home = () => {
   const [dataStatus, setStatus] = useState(null);
   const [logo, setLogo] = useState(logoInit);
   const [brandTxt, setBrand] = useState(bTxtInit);
+  const [oldBrand, setOldBrand] = useState(undefined);
   const [currentPage, setCurrentPage] = useState(1);
   const [finalPage, setFinalPage] = useState(1);
   const [totalDocs, setTotalDocs] = useState(null);
@@ -52,15 +53,17 @@ const Home = () => {
       .then((response) => {
         setStatus(response.data.response_code);
         setData(response.data.result.docs);
-        setCurrentPage(response.data.result.page);
         setFinalPage(response.data.result.totalPages);
         setTotalDocs(response.data.result.totalDocs);
-        if (brand) {
-          setLogo(response.data.result.docs[0].manufacturer.ref.logo);
-          setBrand(response.data.result.docs[0].manufacturer.brand);
-        } else {
-          setLogo(logoInit);
-          setBrand(bTxtInit);
+        if (oldBrand !== brand) {
+          if (brand) {
+            setLogo(response.data.result.docs[0].manufacturer.ref.logo);
+            setBrand(response.data.result.docs[0].manufacturer.brand);
+          } else {
+            setLogo(logoInit);
+            setBrand(bTxtInit);
+          }
+          setOldBrand(brand);
         }
       })
       .catch((error) => {
