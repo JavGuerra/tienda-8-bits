@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import Frame from "../components/Frame";
 import Title from "../components/Title";
 
-const Info = () => (
+const Info = memo( () => (
   <>
   <Frame bg="bg-info" />
 
@@ -52,6 +53,6 @@ const Info = () => (
     </div>
   </main>
   </>
-);
+));
 
 export default Info;
