@@ -9,6 +9,7 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
   const { register, handleSubmit, formState: { errors }, clearErrors, reset } = useForm();
   const chars = /^[\da-zA-ZÀ-ÿ\u00f1\u00d1\s-]*\S$/;
   const newReset = {model: "", brand: "", price: "", year: ""};
+  let newData = newReset;
   const resetBtnRef = useRef();
   const sendBtnRef = useRef();
 
@@ -21,7 +22,7 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
   }, []);
 
   onchange = () => {
-    const newData = {model: form.model.value, brand: form.brand.value,
+    newData = {model: form.model.value, brand: form.brand.value,
         price: form.price.value, year: form.year.value};
     if (JSON.stringify(newReset) !== JSON.stringify(newData)) {
       inactiveBtn(resetBtnRef.current, false);
@@ -46,7 +47,7 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
 
   // Botón send
   const onSubmit = data => {
-    const newData =
+    newData =
       {model: data.model, brand: data.brand, price: data.price, year: data.year};
     if (JSON.stringify(searchData) !== JSON.stringify(newData)) {
       setSearchData(newData);
