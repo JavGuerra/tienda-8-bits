@@ -18,7 +18,7 @@ const Form = forwardRef(
   // Botón reset
   onreset = () => {
     const newReset = {model: "", brand: "", price: "", year: ""};
-    if (searchData != newReset) {
+    if (JSON.stringify(searchData) !== JSON.stringify(newReset)) {
       clearErrors();
       reset(newReset);
       setSearchData(newReset);
@@ -30,7 +30,7 @@ const Form = forwardRef(
   const onSubmit = data => {
     const newData =
       {model: data.model, brand: data.brand, price: data.price, year: data.year};
-    if (searchData != newData) {
+    if (JSON.stringify(searchData) !== JSON.stringify(newData)) {
       setSearchData(newData);
       setCurrentPage(1);
     }
