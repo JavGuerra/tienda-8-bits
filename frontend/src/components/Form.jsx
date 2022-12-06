@@ -21,12 +21,12 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
   // Botón reset
   onreset = () => {
     const newReset = {model: "", brand: "", price: "", year: ""};
+    clearErrors();
+    reset(newReset);
+    inactiveBtn(resetBtnRef.current, true);
     if (JSON.stringify(searchData) !== JSON.stringify(newReset)) {
-      clearErrors();
-      reset(newReset);
       setSearchData(newReset);
       setCurrentPage(1);
-      inactiveBtn(resetBtnRef.current, true);
     }
   };
 
@@ -84,6 +84,8 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
             <span>&nbsp;(&nbsp;!&nbsp;)&nbsp;Modelo&nbsp; </span>}
           {errors.price && <span>&nbsp;(&nbsp;!&nbsp;)&nbsp;Precio&nbsp; </span>}
           {errors.year  && <span>&nbsp;(&nbsp;!&nbsp;)&nbsp;Año&nbsp; </span>}
+          {(errors.model?.type === 'pattern' || errors.price || errors.year)
+            && inactiveBtn(resetBtnRef.current, false)}
         </span>
 
         <div>
