@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import inactBtn from '../modules/inactBtn';
+import inactiveBtn from '../modules/inactiveBtn';
 
 const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
 
@@ -15,7 +15,7 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
     axios.get(url + 'manufacturers/')
         .then(response => setManufacturers(response.data.result)) // Fabricantes
         .catch(error => console.log('Error: ', error.message));
-    inactBtn(resetBtnRef.current, true);
+    inactiveBtn(resetBtnRef.current, true);
   }, []);
 
   // Botón reset
@@ -26,7 +26,7 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
       reset(newReset);
       setSearchData(newReset);
       setCurrentPage(1);
-      inactBtn(resetBtnRef.current, true);
+      inactiveBtn(resetBtnRef.current, true);
     }
   };
 
@@ -37,7 +37,7 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
     if (JSON.stringify(searchData) !== JSON.stringify(newData)) {
       setSearchData(newData);
       setCurrentPage(1);
-      inactBtn(resetBtnRef.current, false);
+      inactiveBtn(resetBtnRef.current, false);
     }
   };
 
