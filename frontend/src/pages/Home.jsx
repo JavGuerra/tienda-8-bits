@@ -51,14 +51,15 @@ const Home = () => {
     axios
       .get(searchUrl)
       .then((response) => {
+        const result = response.data.result;
         setStatus(response.data.response_code);
-        setData(response.data.result.docs);
-        setFinalPage(response.data.result.totalPages);
-        setTotalDocs(response.data.result.totalDocs);
+        setData(result.docs);
+        setFinalPage(result.totalPages);
+        setTotalDocs(result.totalDocs);
         if (oldBrand !== brand) {
           if (brand) {
-            setLogo(response.data.result.docs[0].manufacturer.ref.logo);
-            setBrand(response.data.result.docs[0].manufacturer.brand);
+            setLogo(result.docs[0].manufacturer.ref.logo);
+            setBrand(result.docs[0].manufacturer.brand);
           } else {
             setLogo(logoInit);
             setBrand(bTxtInit);
