@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import useConfig from "../hooks/useConfig";
 import inactiveBtn from '../modules/inactiveBtn';
 
-const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
+const Form = ({ searchData, setSearchData, setCurrentPage }) => {
 
+  const { url } = useConfig();
   const [manufacturers, setManufacturers] = useState([]);
   const { register, handleSubmit, formState: { errors }, clearErrors, reset } = useForm();
   const chars = /^[\da-zA-ZÀ-ÿ\u00f1\u00d1\s-]*\S$/;
@@ -21,6 +23,7 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
     inactiveBtn(sendBtnRef.current, true);
   }, []);
 
+  // Campos
   onchange = () => {
     newData = {model: form.model.value, brand: form.brand.value,
         price: form.price.value, year: form.year.value};

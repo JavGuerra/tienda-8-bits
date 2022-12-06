@@ -80,7 +80,6 @@ const Home = () => {
 
         <div className="bg-controls">
           <Form
-            url={url}
             searchData={searchData}
             setSearchData={setSearchData}
             setCurrentPage={setCurrentPage}
