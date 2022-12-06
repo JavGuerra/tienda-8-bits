@@ -13,7 +13,6 @@ import Zone from "../components/Zone";
 // Mis módulos
 import inactiveBtn from "../modules/inactiveBtn";
 import setSpin from "../modules/setSpin";
-import readStatus from "../modules/readStatus";
 
 const Home = () => {
 
@@ -111,7 +110,9 @@ const Home = () => {
         <section className="container">
           {dataStatus === 0
             ? <Result filteredData={filteredData} />
-            : <h3 className="noResult">{readStatus(dataStatus)}</h3>}
+            : <h3 className="noResult">
+                {dataStatus ? 'Sin coincidencias' : '¿Datos...?'}
+              </h3>}
         </section>
 
         <section>
