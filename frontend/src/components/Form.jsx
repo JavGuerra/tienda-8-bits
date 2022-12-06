@@ -1,18 +1,21 @@
-import { useState, useEffect, forwardRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import inactBtn from '../modules/inactBtn';
 
-const Form = forwardRef(
-  ({ url, searchData, setSearchData, setCurrentPage }, sendBtnRef) => {
+const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
 
   const [manufacturers, setManufacturers] = useState([]);
   const { register, handleSubmit, formState: { errors }, clearErrors, reset } = useForm();
   const chars = /^[\da-zA-ZÀ-ÿ\u00f1\u00d1\s-]*\S$/;
+  const resetBtnRef = useRef();
+  const sendBtnRef = useRef();
 
   useEffect(() => {
     axios.get(url + 'manufacturers/')
         .then(response => setManufacturers(response.data.result)) // Fabricantes
         .catch(error => console.log('Error: ', error.message));
+    inactBtn(resetBtnRef.current, true);
   }, []);
 
   // Botón reset
@@ -23,6 +26,7 @@ const Form = forwardRef(
       reset(newReset);
       setSearchData(newReset);
       setCurrentPage(1);
+      inactBtn(resetBtnRef.current, true);
     }
   };
 
@@ -33,6 +37,7 @@ const Form = forwardRef(
     if (JSON.stringify(searchData) !== JSON.stringify(newData)) {
       setSearchData(newData);
       setCurrentPage(1);
+      inactBtn(resetBtnRef.current, false);
     }
   };
 
@@ -82,7 +87,7 @@ const Form = forwardRef(
         </span>
 
         <div>
-          <button id="reset" type="reset">
+          <button ref={resetBtnRef} id="reset" type="reset">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon" fill="none"
               viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -99,6 +104,6 @@ const Form = forwardRef(
 
     </form>
   );
-})
+};
 
 export default Form;

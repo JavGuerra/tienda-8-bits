@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import axios     from "axios";
 import useConfig from "../hooks/useConfig";
-// Componentes
+import setSpin   from "../modules/setSpin";
+
 import Logo      from "../components/Logo";
 import Frame     from "../components/Frame";
 import Form      from "../components/Form";
@@ -10,14 +11,10 @@ import Result    from "../components/Result";
 import Sort      from "../components/Sort";
 import Title     from "../components/Title";
 import Zone      from "../components/Zone";
-// Mis módulos
-import inactBtn  from "../modules/inactBtn";
-import setSpin   from "../modules/setSpin";
 
 const Home = () => {
 
   const { url } = useConfig();
-  const sendBtnRef = useRef();
   const dataInit = { model: "", brand: "", price: "", year: "" };
   const sortInit = { sortmodel: 1, relevant: false, limit: 12 };
   const logoInit = "assets/img/img-logo.png";
@@ -45,9 +42,7 @@ const Home = () => {
     
     const searchUrl = url + 'products' + params;
 
-    inactBtn(sendBtnRef.current, true);
     setSpin(true);
-
     axios
       .get(searchUrl)
       .then((response) => {
@@ -70,10 +65,8 @@ const Home = () => {
       .catch((error) => {
         setStatus(-1); // Devuelve error
         console.log("Error: ", error.message);
-      });
-
-    setSpin(false);
-    inactBtn(sendBtnRef.current, false);
+      })
+      .finally(setSpin(false));
   }; // end homeEffect
 
   useEffect(homeEffect, [searchData, sortData, currentPage]);
@@ -91,7 +84,6 @@ const Home = () => {
             searchData={searchData}
             setSearchData={setSearchData}
             setCurrentPage={setCurrentPage}
-            sendBtnRef={sendBtnRef}
           />
 
           <Sort
