@@ -1,28 +1,29 @@
 import { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import axios     from "axios";
 import useConfig from "../hooks/useConfig";
 // Componentes
-import Title from "../components/Title";
-import Frame from "../components/Frame";
-import Form from "../components/Form";
-import Logo from "../components/Logo";
-import Sort from "../components/Sort";
-import Result from "../components/Result";
+import Logo      from "../components/Logo";
+import Frame     from "../components/Frame";
+import Form      from "../components/Form";
 import Paginator from "../components/Paginator";
-import Zone from "../components/Zone";
+import Result    from "../components/Result";
+import Sort      from "../components/Sort";
+import Title     from "../components/Title";
+import Zone      from "../components/Zone";
 // Mis módulos
-import inactiveBtn from "../modules/inactiveBtn";
-import setSpin from "../modules/setSpin";
+import inactBtn  from "../modules/inactBtn";
+import setSpin   from "../modules/setSpin";
 
 const Home = () => {
 
   const { url } = useConfig();
   const sendBtnRef = useRef();
+  const dataInit = { model: "", brand: "", price: "", year: "" };
   const sortInit = { sortmodel: 1, relevant: false, limit: 12 };
   const logoInit = "assets/img/img-logo.png";
   const bTxtInit = "Todas las marcas 8 bits";
 
-  const [searchData, setSearchData] = useState({});
+  const [searchData, setSearchData] = useState(dataInit);
   const [sortData, setSortData] = useState(sortInit);
   const [filteredData, setData] = useState(null);
   const [dataStatus, setStatus] = useState(null);
@@ -44,7 +45,7 @@ const Home = () => {
     
     const searchUrl = url + 'products' + params;
 
-    inactiveBtn(sendBtnRef.current, true);
+    inactBtn(sendBtnRef.current, true);
     setSpin(true);
 
     axios
@@ -72,7 +73,7 @@ const Home = () => {
       });
 
     setSpin(false);
-    inactiveBtn(sendBtnRef.current, false);
+    inactBtn(sendBtnRef.current, false);
   }; // end homeEffect
 
   useEffect(homeEffect, [searchData, sortData, currentPage]);
@@ -87,6 +88,7 @@ const Home = () => {
         <div className="bg-controls">
           <Form
             url={url}
+            searchData={searchData}
             setSearchData={setSearchData}
             setCurrentPage={setCurrentPage}
             sendBtnRef={sendBtnRef}

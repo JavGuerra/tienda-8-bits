@@ -3,11 +3,11 @@
  * @param {Element} button 
  * @param {Boolean} status 
  */
-function inactiveBtn(button, status) {
+function inactBtn(button, status) {
     if (button) {
       button.disabled = status;
       button.setAttribute('aria-disabled', status);
     }
 }
 
-export default inactiveBtn;
+export default inactBtn;

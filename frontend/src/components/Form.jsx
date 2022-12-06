@@ -2,7 +2,8 @@ import { useState, useEffect, forwardRef } from "react";
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
-const Form = forwardRef(({ url, setSearchData, setCurrentPage }, sendBtnRef) => {
+const Form = forwardRef(
+  ({ url, searchData, setSearchData, setCurrentPage }, sendBtnRef) => {
 
   const [manufacturers, setManufacturers] = useState([]);
   const { register, handleSubmit, formState: { errors }, clearErrors, reset } = useForm();
@@ -16,16 +17,23 @@ const Form = forwardRef(({ url, setSearchData, setCurrentPage }, sendBtnRef) => 
 
   // Botón reset
   onreset = () => {
-    clearErrors();
-    reset({model: '', brand: '', price: '', year: '' });
-    setSearchData({});
-    setCurrentPage(1);
+    const newReset = {model: "", brand: "", price: "", year: ""};
+    if (searchData != newReset) {
+      clearErrors();
+      reset(newReset);
+      setSearchData(newReset);
+      setCurrentPage(1);
+    }
   };
 
   // Botón send
   const onSubmit = data => {
-    setSearchData({model: data.model, brand: data.brand, price: data.price, year: data.year });
-    setCurrentPage(1);
+    const newData =
+      {model: data.model, brand: data.brand, price: data.price, year: data.year};
+    if (searchData != newData) {
+      setSearchData(newData);
+      setCurrentPage(1);
+    }
   };
 
   return (
