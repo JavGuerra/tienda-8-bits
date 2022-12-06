@@ -2,7 +2,7 @@ import { memo } from 'react';
 import Frame from "../components/Frame";
 import Title from "../components/Title";
 
-const Contact = memo ( () => (
+const Contact = () => (
   <>
   <Frame bg="bg-contact" />
 
@@ -50,6 +50,6 @@ const Contact = memo ( () => (
     </ul>
   </main>
   </>
-));
+);
 
-export default Contact;
+export default memo(Contact);

@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { Link } from "react-router-dom";
 import Title from "../components/Title";
 
-const NoPage = memo( () => (
+const NoPage = () => (
   <>
   <header className="container">
     <Title title="Error 404" />
@@ -19,6 +19,6 @@ const NoPage = memo( () => (
     </Link>
   </main>
   </>
-));
+);
 
-export default NoPage;
+export default memo(NoPage);
