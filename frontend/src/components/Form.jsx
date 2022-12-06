@@ -8,6 +8,7 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
   const [manufacturers, setManufacturers] = useState([]);
   const { register, handleSubmit, formState: { errors }, clearErrors, reset } = useForm();
   const chars = /^[\da-zA-ZÀ-ÿ\u00f1\u00d1\s-]*\S$/;
+  const newReset = {model: "", brand: "", price: "", year: ""};
   const resetBtnRef = useRef();
   const sendBtnRef = useRef();
 
@@ -16,14 +17,27 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
         .then(response => setManufacturers(response.data.result)) // Fabricantes
         .catch(error => console.log('Error: ', error.message));
     inactiveBtn(resetBtnRef.current, true);
+    inactiveBtn(sendBtnRef.current, true);
   }, []);
+
+  onchange = () => {
+    const newData = {model: form.model.value, brand: form.brand.value,
+        price: form.price.value, year: form.year.value};
+    if (JSON.stringify(newReset) !== JSON.stringify(newData)) {
+      inactiveBtn(resetBtnRef.current, false);
+      inactiveBtn(sendBtnRef.current, false);
+    } else {
+      inactiveBtn(resetBtnRef.current, true);
+      inactiveBtn(sendBtnRef.current, true);
+    }
+  }
 
   // Botón reset
   onreset = () => {
-    const newReset = {model: "", brand: "", price: "", year: ""};
     clearErrors();
     reset(newReset);
     inactiveBtn(resetBtnRef.current, true);
+    inactiveBtn(sendBtnRef.current, true);
     if (JSON.stringify(searchData) !== JSON.stringify(newReset)) {
       setSearchData(newReset);
       setCurrentPage(1);
@@ -38,6 +52,7 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
       setSearchData(newData);
       setCurrentPage(1);
       inactiveBtn(resetBtnRef.current, false);
+      inactiveBtn(sendBtnRef.current, false);
     }
   };
 
@@ -47,7 +62,7 @@ const Form = ({ url, searchData, setSearchData, setCurrentPage }) => {
       <div className="bg-form-input">
         <div>
           <label htmlFor="model" className="sr">Modelo:</label>
-          <input type="text" id="model" placeholder="modelo"
+          <input type="text" id="model" placeholder="modelo" onChange={() => alert("Hola!")}
             {...register('model', { pattern: chars })} autoFocus="autofocus" />
         </div>
 
