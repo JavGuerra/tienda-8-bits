@@ -103,8 +103,6 @@ const Form = ({ searchData, setSearchData, setCurrentPage }) => {
             <span>&nbsp;(&nbsp;!&nbsp;)&nbsp;Modelo&nbsp; </span>}
           {errors.price && <span>&nbsp;(&nbsp;!&nbsp;)&nbsp;Precio&nbsp; </span>}
           {errors.year  && <span>&nbsp;(&nbsp;!&nbsp;)&nbsp;Año&nbsp; </span>}
-          {(errors.model?.type === 'pattern' || errors.price || errors.year)
-            && inactiveBtn(resetBtnRef.current, false)}
         </span>
 
         <div>
