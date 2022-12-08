@@ -45,8 +45,8 @@ __Tecnologías__: React + Vite, axios, react-router-dom, react-hook-form
 __Módulos propios__: setSpin, inactiveBtn  
 
 __Instalación__:
-* Cambiar la ruta `base` de la ubicación en el servidor en `vite.config.js`  
-* Cambiar la `url` de acceso al backend en `src/context/ConfigContext.js`  
+* Renombrar `.env.example` a `.env` y cambiar la `url` de acceso al backend
+* Cambiar la ruta (`base:`) de la ubicación de la APP en el servidor en `vite.config.js`    
 * Preparar la distribución de la carpeta `dist` para subir al servidor con `npm run build`  
 
 __Modos de uso__:
