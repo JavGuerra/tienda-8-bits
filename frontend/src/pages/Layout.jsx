@@ -1,4 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
+
 import useConfig from "../hooks/useConfig";
 import Head from "../components/Head";
 import Footer from "../components/Footer";

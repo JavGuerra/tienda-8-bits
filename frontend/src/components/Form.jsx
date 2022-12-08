@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
+
 import { useForm } from 'react-hook-form';
-import getAllManufacturers from '../services/Manufacturers';
-import useConfig from "../hooks/useConfig";
+import { getData } from "../services/API";
+import useConfig   from "../hooks/useConfig";
 import inactiveBtn from '../modules/inactiveBtn';
 
 const Form = ({ searchData, setSearchData, setCurrentPage }) => {
@@ -16,7 +17,7 @@ const Form = ({ searchData, setSearchData, setCurrentPage }) => {
   const sendBtnRef = useRef();
 
   useEffect(() => {
-    getAllManufacturers(baseUrl + 'manufacturers/')
+    getData(baseUrl + 'manufacturers/')
       .then(response => setManufacturers(response.result)) // Fabricantes
       .catch(error => console.log('Error: ', error.message));
     inactiveBtn(resetBtnRef.current, true);

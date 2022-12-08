@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
-import getFilteredProducts from "../services/Products";
-import useConfig from "../hooks/useConfig";
-import setSpin   from "../modules/setSpin";
 
-import Logo      from "../components/Logo";
-import Frame     from "../components/Frame";
-import Form      from "../components/Form";
-import Paginator from "../components/Paginator";
-import Result    from "../components/Result";
-import Sort      from "../components/Sort";
-import Title     from "../components/Title";
-import Zone      from "../components/Zone";
+import { getData } from "../services/API";
+import useConfig   from "../hooks/useConfig";
+import setSpin     from "../modules/setSpin";
+
+import Logo        from "../components/Logo";
+import Frame       from "../components/Frame";
+import Form        from "../components/Form";
+import Paginator   from "../components/Paginator";
+import Result      from "../components/Result";
+import Sort        from "../components/Sort";
+import Title       from "../components/Title";
+import Zone        from "../components/Zone";
 
 const Home = () => {
 
@@ -43,7 +44,7 @@ const Home = () => {
     const searchUrl = baseUrl + 'products' + params;
 
     setSpin(true);
-    getFilteredProducts(searchUrl)
+    getData(searchUrl)
       .then((response) => {
         const result = response.result;
         setStatus(response.response_code);
