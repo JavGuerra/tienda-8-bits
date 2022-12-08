@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 import { getData } from "../services/API";
-import useConfig   from "../hooks/useConfig";
 import setSpin     from "../modules/setSpin";
 
 import Logo        from "../components/Logo";
@@ -15,7 +14,6 @@ import Zone        from "../components/Zone";
 
 const Home = () => {
 
-  const { baseUrl } = useConfig();
   const dataInit = { model: "", brand: "", price: "", year: "" };
   const sortInit = { sortmodel: 1, relevant: false, limit: 12 };
   const logoInit = "assets/img/img-logo.png";
@@ -41,7 +39,7 @@ const Home = () => {
       + `&sortmodel=${sortmodel || ''}&sortprice=${sortprice || ''}`
       + `&sortyear=${sortyear || ''}&relevant=${relevant}&limit=${limit}`;
     
-    const searchUrl = baseUrl + 'products' + params;
+    const searchUrl = 'products' + params;
 
     setSpin(true);
     getData(searchUrl)
