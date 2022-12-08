@@ -63,7 +63,7 @@ const Home = () => {
         console.log("Error: ", error.message);
       })
       .finally(setSpin(false));
-  }; // end homeEffect
+  }; // end getProducts
 
   useEffect(getProducts, [searchData, sortData, currentPage]);
 
