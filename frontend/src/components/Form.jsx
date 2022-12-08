@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import getAllManufacturers from '../services/Manufacturers';
 import useConfig from "../hooks/useConfig";
 import inactiveBtn from '../modules/inactiveBtn';
 
 const Form = ({ searchData, setSearchData, setCurrentPage }) => {
 
-  const { url } = useConfig();
+  const { baseUrl } = useConfig();
   const [manufacturers, setManufacturers] = useState([]);
   const { register, handleSubmit, formState: { errors }, clearErrors, reset } = useForm();
   const chars = /^[\da-zA-ZÀ-ÿ\u00f1\u00d1\s-]*\S$/;
@@ -16,9 +16,9 @@ const Form = ({ searchData, setSearchData, setCurrentPage }) => {
   const sendBtnRef = useRef();
 
   useEffect(() => {
-    axios.get(url + 'manufacturers/')
-        .then(response => setManufacturers(response.data.result)) // Fabricantes
-        .catch(error => console.log('Error: ', error.message));
+    getAllManufacturers(baseUrl + 'manufacturers/')
+      .then(response => setManufacturers(response.result)) // Fabricantes
+      .catch(error => console.log('Error: ', error.message));
     inactiveBtn(resetBtnRef.current, true);
     inactiveBtn(sendBtnRef.current, true);
   }, []);

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios     from "axios";
+import getFilteredProducts from "../services/Products";
 import useConfig from "../hooks/useConfig";
 import setSpin   from "../modules/setSpin";
 
@@ -14,7 +14,7 @@ import Zone      from "../components/Zone";
 
 const Home = () => {
 
-  const { url } = useConfig();
+  const { baseUrl } = useConfig();
   const dataInit = { model: "", brand: "", price: "", year: "" };
   const sortInit = { sortmodel: 1, relevant: false, limit: 12 };
   const logoInit = "assets/img/img-logo.png";
@@ -31,7 +31,7 @@ const Home = () => {
   const [finalPage, setFinalPage] = useState(1);
   const [totalDocs, setTotalDocs] = useState(null);
 
-  const homeEffect = () => {
+  const getProducts = () => {
     const { model, brand, price, year } = searchData;
     const { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
 
@@ -40,14 +40,13 @@ const Home = () => {
       + `&sortmodel=${sortmodel || ''}&sortprice=${sortprice || ''}`
       + `&sortyear=${sortyear || ''}&relevant=${relevant}&limit=${limit}`;
     
-    const searchUrl = url + 'products' + params;
+    const searchUrl = baseUrl + 'products' + params;
 
     setSpin(true);
-    axios
-      .get(searchUrl)
+    getFilteredProducts(searchUrl)
       .then((response) => {
-        const result = response.data.result;
-        setStatus(response.data.response_code);
+        const result = response.result;
+        setStatus(response.response_code);
         setData(result.docs);
         setFinalPage(result.totalPages);
         setTotalDocs(result.totalDocs);
@@ -69,7 +68,7 @@ const Home = () => {
       .finally(setSpin(false));
   }; // end homeEffect
 
-  useEffect(homeEffect, [searchData, sortData, currentPage]);
+  useEffect(getProducts, [searchData, sortData, currentPage]);
 
   return (
     <>
