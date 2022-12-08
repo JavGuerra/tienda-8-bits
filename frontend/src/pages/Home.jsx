@@ -38,11 +38,9 @@ const Home = () => {
       + `&brand=${brand || ''}&price=${price || ''}&year=${year || ''}`
       + `&sortmodel=${sortmodel || ''}&sortprice=${sortprice || ''}`
       + `&sortyear=${sortyear || ''}&relevant=${relevant}&limit=${limit}`;
-    
-    const searchUrl = 'products' + params;
 
     setSpin(true);
-    getData(searchUrl)
+    getData('products' + params)
       .then((response) => {
         const result = response.result;
         setStatus(response.response_code);
