@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const baseUrl = 'https://api-tienda8bits.up.railway.app/v1/';
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const getData = (route) => {
-    const  request = axios.get(baseUrl + route);
+    const  request = axios.get(apiUrl + route);
     return request.then(response => response.data);
 }
 

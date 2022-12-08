@@ -3,8 +3,7 @@ import { createContext } from "react";
 const Config = createContext({
   title:   'Tienda 8 bits',
   footer:  'Desarrollado por: Javier Guerra',
-  link:    'https://javguerra.github.io/',
-  baseUrl: 'https://api-tienda8bits.up.railway.app/v1/'
+  link:    'https://javguerra.github.io/'
 });
 
 export default Config;
