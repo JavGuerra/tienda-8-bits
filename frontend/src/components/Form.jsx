@@ -4,44 +4,45 @@ import { useForm } from 'react-hook-form';
 import { getData } from "../services/API";
 import inactiveBtn from '../modules/inactiveBtn';
 
+const compareTwoObjs = (obj1, obj2) =>
+    JSON.stringify(obj1) === JSON.stringify(obj2);
+
 const Form = ({ searchData, setSearchData, setCurrentPage }) => {
 
   const [manufacturers, setManufacturers] = useState([]);
-  const { register, handleSubmit, formState: { errors }, clearErrors, reset } = useForm();
+  const { register, handleSubmit, formState: { errors }, clearErrors, reset }
+    = useForm();
   const chars = /^[\da-zA-ZÀ-ÿ\u00f1\u00d1\s-]*\S$/;
   const newReset = {model: "", brand: "", price: "", year: ""};
   let newData = newReset;
   const resetBtnRef = useRef();
   const sendBtnRef = useRef();
+  const inactiveButtons = (status) => {
+    inactiveBtn(resetBtnRef.current, status);
+    inactiveBtn(sendBtnRef.current, status);
+  }
 
   useEffect(() => {
+    inactiveButtons(true);
     getData('manufacturers/')
       .then(response => setManufacturers(response.result)) // Fabricantes
       .catch(error => console.log('Error: ', error.message));
-    inactiveBtn(resetBtnRef.current, true);
-    inactiveBtn(sendBtnRef.current, true);
   }, []);
 
   // Campos
   onchange = () => {
     newData = {model: form.model.value, brand: form.brand.value,
         price: form.price.value, year: form.year.value};
-    if (JSON.stringify(newReset) !== JSON.stringify(newData)) {
-      inactiveBtn(resetBtnRef.current, false);
-      inactiveBtn(sendBtnRef.current, false);
-    } else {
-      inactiveBtn(resetBtnRef.current, true);
-      inactiveBtn(sendBtnRef.current, true);
-    }
+    !compareTwoObjs(newReset, newData)
+      ? inactiveButtons(false) : inactiveButtons(true);
   }
 
   // Botón reset
   onreset = () => {
     clearErrors();
     reset(newReset);
-    inactiveBtn(resetBtnRef.current, true);
-    inactiveBtn(sendBtnRef.current, true);
-    if (JSON.stringify(searchData) !== JSON.stringify(newReset)) {
+    inactiveButtons(true);
+    if (!compareTwoObjs(searchData, newReset)) {
       setSearchData(newReset);
       setCurrentPage(1);
     }
@@ -51,11 +52,10 @@ const Form = ({ searchData, setSearchData, setCurrentPage }) => {
   const onSubmit = data => {
     newData =
       {model: data.model, brand: data.brand, price: data.price, year: data.year};
-    if (JSON.stringify(searchData) !== JSON.stringify(newData)) {
+    if (!compareTwoObjs(searchData, newData)) {
       setSearchData(newData);
       setCurrentPage(1);
-      inactiveBtn(resetBtnRef.current, false);
-      inactiveBtn(sendBtnRef.current, false);
+      inactiveButtons(false);
     }
   };
 
@@ -65,7 +65,7 @@ const Form = ({ searchData, setSearchData, setCurrentPage }) => {
       <div className="bg-form-input">
         <div>
           <label htmlFor="model" className="sr">Modelo:</label>
-          <input type="text" id="model" placeholder="modelo" onChange={() => alert("Hola!")}
+          <input type="text" id="model" placeholder="modelo" 
             {...register('model', { pattern: chars })} autoFocus="autofocus" />
         </div>
 
