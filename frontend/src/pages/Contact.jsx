@@ -40,7 +40,7 @@ const Contact = () => (
       </li>
       <li>
         <a href="https://www.youtube.com/channel/UCnsTc94pRQeZinSQDVKv7jQ" target="_blank">
-          <img src="assets/img/yt.png" alt="Youtube" />
+          <img src="assets/img/yt.png" alt="YouTube" />
         </a>
       </li>
       <li>

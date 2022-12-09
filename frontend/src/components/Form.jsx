@@ -3,9 +3,7 @@ import { useForm } from 'react-hook-form';
 
 import { getData } from "../services/API";
 import inactiveBtn from '../modules/inactiveBtn';
-
-const compareTwoObjs = (obj1, obj2) =>
-  JSON.stringify(obj1) === JSON.stringify(obj2);
+import compareTwoObjects from "../modules/compareTwoObjects";
 
 const Form = ({ searchData, setSearchData, setCurrentPage }) => {
 
@@ -33,7 +31,7 @@ const Form = ({ searchData, setSearchData, setCurrentPage }) => {
   onchange = () => {
     newData = {model: form.model.value, brand: form.brand.value,
       price: form.price.value, year: form.year.value};
-    !compareTwoObjs(newReset, newData)
+    !compareTwoObjects(newReset, newData)
       ? inactiveButtons(false) : inactiveButtons(true);
   }
 
@@ -42,7 +40,7 @@ const Form = ({ searchData, setSearchData, setCurrentPage }) => {
     clearErrors();
     reset(newReset);
     inactiveButtons(true);
-    if (!compareTwoObjs(searchData, newReset)) {
+    if (!compareTwoObjects(searchData, newReset)) {
       setSearchData(newReset);
       setCurrentPage(1);
     }
@@ -52,7 +50,7 @@ const Form = ({ searchData, setSearchData, setCurrentPage }) => {
   const onSubmit = data => {
     newData =
       {model: data.model, brand: data.brand, price: data.price, year: data.year};
-    if (!compareTwoObjs(searchData, newData)) {
+    if (!compareTwoObjects(searchData, newData)) {
       setSearchData(newData);
       setCurrentPage(1);
       inactiveButtons(false);

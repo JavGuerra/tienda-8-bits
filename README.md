@@ -42,7 +42,7 @@ __Características destacadas de la API__:
 ## Front end
 
 __Tecnologías__: React + Vite, axios, react-router-dom, react-hook-form  
-__Módulos propios__: setSpin, inactiveBtn  
+__Módulos propios__: setSpin, inactiveBtn, compareTwoObjects  
 
 __Instalación__:
 * Renombrar `.env.example` a `.env` y completar la `url` de acceso al backend
