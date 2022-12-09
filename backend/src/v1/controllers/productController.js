@@ -9,7 +9,8 @@ const insertRoutes = data => {
     result.forEach(element => {
         element.photo = url + 'photo/' + element.photo;
         if (!element.manufacturer.ref.logo.includes(url)) 
-            element.manufacturer.ref.logo = url + 'logo/' + element.manufacturer.ref.logo;
+            element.manufacturer.ref.logo =
+                url + 'logo/' + element.manufacturer.ref.logo;
     })
     if (data.docs) data.docs = result; else data = result;
     return data;
