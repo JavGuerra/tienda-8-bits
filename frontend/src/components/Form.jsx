@@ -5,7 +5,7 @@ import { getData } from "../services/API";
 import inactiveBtn from '../modules/inactiveBtn';
 
 const compareTwoObjs = (obj1, obj2) =>
-    JSON.stringify(obj1) === JSON.stringify(obj2);
+  JSON.stringify(obj1) === JSON.stringify(obj2);
 
 const Form = ({ searchData, setSearchData, setCurrentPage }) => {
 
@@ -32,7 +32,7 @@ const Form = ({ searchData, setSearchData, setCurrentPage }) => {
   // Campos
   onchange = () => {
     newData = {model: form.model.value, brand: form.brand.value,
-        price: form.price.value, year: form.year.value};
+      price: form.price.value, year: form.year.value};
     !compareTwoObjs(newReset, newData)
       ? inactiveButtons(false) : inactiveButtons(true);
   }
