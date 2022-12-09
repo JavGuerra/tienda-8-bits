@@ -42,15 +42,14 @@ const Home = () => {
     setSpin(true);
     getData('products' + params)
       .then((response) => {
-        const result = response.result;
         setStatus(response.response_code);
-        setData(result.docs);
-        setFinalPage(result.totalPages);
-        setTotalDocs(result.totalDocs);
+        setData(response.result.docs);
+        setFinalPage(response.result.totalPages);
+        setTotalDocs(response.result.totalDocs);
         if (oldBrand !== brand) {
           if (brand) {
-            setLogo(result.docs[0].manufacturer.ref.logo);
-            setBrand(result.docs[0].manufacturer.brand);
+            setLogo(response.result.docs[0].manufacturer.ref.logo);
+            setBrand(response.result.docs[0].manufacturer.brand);
           } else {
             setLogo(logoInit);
             setBrand(bTxtInit);
