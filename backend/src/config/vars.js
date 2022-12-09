@@ -1,5 +1,7 @@
 const initVars = async () => {
     
+    // Se asume que las variables de entorno en producción son declaradas
+    // en el servidor. De lo contrario, eliminar la siguiente condición if.
     if (process.env.NODE_ENV !== 'production') {
         const dotenv = await import('dotenv');
         dotenv.config();
