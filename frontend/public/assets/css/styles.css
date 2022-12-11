@@ -218,7 +218,7 @@ h2  {
 }
 
 .bg-form {
-    padding: 8px 12px;
+    padding: 8px 8px;
     box-sizing: border-box;
     flex-direction: column;
 }
@@ -226,7 +226,7 @@ h2  {
 .bg-form-input {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px 10px;
+    gap: 8px 8px;
     justify-content: center;
 }
 
@@ -256,7 +256,7 @@ h2  {
 }
 
 .bg-form-button div {
-    margin-top: 6px;  
+    margin-top: 7px;  
 }
 
 .errors {
@@ -297,6 +297,7 @@ h2  {
 #send {
     height: 24px;
     margin: 0 5px 3px;
+    padding-top: 4px;
     border: 0;
     cursor: pointer;
     border-radius: 12px;
