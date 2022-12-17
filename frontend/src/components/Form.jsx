@@ -5,14 +5,15 @@ import { getData } from "../services/API";
 import inactiveBtn from '../modules/inactiveBtn';
 import compareTwoObjects from "../modules/compareTwoObjects";
 
+const chars = /^[\da-zA-ZÀ-ÿ\u00f1\u00d1\s-]*\S$/;
+const newReset = {model: "", brand: "", price: "", year: ""};
+let newData = newReset;
+
 const Form = ({ searchData, setSearchData, setCurrentPage }) => {
 
   const [manufacturers, setManufacturers] = useState([]);
   const { register, handleSubmit, formState: { errors }, clearErrors, reset }
     = useForm();
-  const chars = /^[\da-zA-ZÀ-ÿ\u00f1\u00d1\s-]*\S$/;
-  const newReset = {model: "", brand: "", price: "", year: ""};
-  let newData = newReset;
   const resetBtnRef = useRef();
   const sendBtnRef = useRef();
   const inactiveButtons = (status) => {
