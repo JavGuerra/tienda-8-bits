@@ -12,13 +12,13 @@ import Sort        from "../components/Sort";
 import Title       from "../components/Title";
 import Zone        from "../components/Zone";
 
+const dataInit = { model: "", brand: "", price: "", year: "" };
+const sortInit = { sortmodel: 1, relevant: false, limit: 12 };
+const logoInit = "assets/img/img-logo.png";
+const bTxtInit = "Todas las marcas 8 bits";
+
 const Home = () => {
-
-  const dataInit = { model: "", brand: "", price: "", year: "" };
-  const sortInit = { sortmodel: 1, relevant: false, limit: 12 };
-  const logoInit = "assets/img/img-logo.png";
-  const bTxtInit = "Todas las marcas 8 bits";
-
+  
   const [searchData, setSearchData] = useState(dataInit);
   const [sortData, setSortData] = useState(sortInit);
   const [filteredData, setData] = useState(null);
