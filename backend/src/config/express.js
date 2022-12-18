@@ -6,7 +6,9 @@ import helmet from 'helmet';
 import v1ManufacturerRoutes from '../v1/routes/manufacturerRoutes.js';
 import v1ProductRoutes from '../v1/routes/productRoutes.js';
 
-export default express()
+const expressApp = express();
+
+expressApp
 
     // Middlewares
 
@@ -33,3 +35,5 @@ export default express()
         const status = err.status || 500;
         res.status(status).send(`Error ${status}: ${err.message}.`);
     });
+
+export default expressApp;
