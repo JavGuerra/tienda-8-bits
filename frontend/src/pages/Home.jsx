@@ -34,10 +34,10 @@ const Home = () => {
     const { model, brand, price, year } = searchData;
     const { sortmodel, sortprice, sortyear, relevant, limit } = sortData;
 
-    const params = `?page=${currentPage}&model=${model || ''}`
-      + `&brand=${brand || ''}&price=${price || ''}&year=${year || ''}`
-      + `&sortmodel=${sortmodel || ''}&sortprice=${sortprice || ''}`
-      + `&sortyear=${sortyear || ''}&relevant=${relevant}&limit=${limit}`;
+    const params = `?page=${currentPage}&model=${model ?? ''}`
+      + `&brand=${brand ?? ''}&price=${price ?? ''}&year=${year ?? ''}`
+      + `&sortmodel=${sortmodel ?? ''}&sortprice=${sortprice ?? ''}`
+      + `&sortyear=${sortyear ?? ''}&relevant=${relevant}&limit=${limit}`;
 
     setSpin(true);
     getData('products' + params)
