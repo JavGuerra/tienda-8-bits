@@ -44,12 +44,12 @@ __Características destacadas de la API__:
 __Tecnologías__: React + Vite, axios, react-router-dom, react-hook-form  
 __Módulos propios__: setSpin, inactiveBtn, compareTwoObjects  
 
-__Instalación__:
+__Instalación__:  
 * Renombrar `.env.example` a `.env` y completar la `url` de acceso al backend
 * Cambiar la ruta (`base:`) de la ubicación de la APP en el servidor en `vite.config.js`    
 * Preparar la distribución de la carpeta `dist` para subir al servidor con `npm run build`  
 
-__Modos de uso__:
+__Modos de uso__:  
 * Uso en desarrollo: `npm run dev`  
 * Para su uso en producción, construir con: `npm run build`  
 
