@@ -9,7 +9,7 @@ Noviembre 2022
 
 Ver el fichero [enunciado.pdf](enunciado.pdf) para conocer los requisitos de la práctica.  
 Ver el fichero [presentacion.pdf](presentacion.pdf) para conocer los antecedentes de la práctica.  
-Ver [info sobre la presentación](https://javguerra.github.io/2022-11-18-proyecto-final-bootcamp/) + [video](https://youtu.be/XlswjqhxJZ8).  
+Ver [info sobre la presentación](https://javguerra.github.io/blog/tienda-8-bits/) + [video](https://youtu.be/XlswjqhxJZ8).  
 
 ## Back end
 
@@ -90,7 +90,7 @@ Material usado sin ánimo de lucro bajo criterios didácticos y formativos.
 
 Artículos informativos elaborados por el autor relacionados con esta práctica:  
 
-- [Usando populate con paginate y filtrando los resultados](https://javguerra.github.io/2022-10-29-populate-paginate-fitrado/)  
-- [Generar enlaces dinámicos de imágenes almacenadas en MongoDB](https://javguerra.github.io/2022-11-06-rutas-dinamicas-imagenes-mongodb/)  
-- [Ordenando resultados en React](https://javguerra.github.io/2022-11-23-ordenacion-react/)  
-- [Spinner loader asíncrono](https://javguerra.github.io/2022-05-30-spinner-loader-asincrono/)  
+- [Usando populate con paginate y filtrando los resultados](https://javguerra.github.io/blog/populate-paginate-fitrado/)  
+- [Generar enlaces dinámicos de imágenes almacenadas en MongoDB](https://javguerra.github.io/blog/rutas-dinamicas-imagenes-mongodb/)  
+- [Ordenando resultados en React](https://javguerra.github.io/blog/ordenacion-react/)  
+- [Spinner loader asíncrono](https://javguerra.github.io/blog/spinner-loader-asincrono/)  
